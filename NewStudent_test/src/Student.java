@@ -1,17 +1,18 @@
 
 class Student {
 
-    int StudentNumber;
-    String StudentName;
-    String StudentCode;
-    String BranchName;
+    public int StudentNumber;
+    public String StudentName;
+    public String StudentCode;
+    public String BranchName;
+    private double grade ;
 
-    String[] getAllData() {
+    public String[] getAllData() {
         String strAll[] = {String.valueOf(StudentNumber), StudentName, StudentCode, BranchName};
         return strAll;
     }
 
-    String getAllDataInString() {
+    public String getAllDataInString() {
         String strAll = String.valueOf(StudentNumber) + ";" + StudentName + ";" + StudentCode + ";" + BranchName;
         return strAll;
     }
