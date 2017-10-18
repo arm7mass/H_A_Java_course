@@ -9,10 +9,10 @@ public class Student {
     private double grade;
     
 // constructor   
-    public Student() {
+    public Student(int Student_number , String Student_name ) {
         System.out.println("\n new student is created :\n ");
-        StudentNumber = 0;
-        StudentName = "empty name";
+        StudentNumber = Student_number;
+        StudentName = Student_name;
         StudentCode = "empty code";
         BranchName = "empty branch";
     }
