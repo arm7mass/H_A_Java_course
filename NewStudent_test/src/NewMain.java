@@ -29,6 +29,8 @@ public class NewMain {
         s2.BranchName = "Doctor";
         System.out.println(s2.getAllDataInString());
         System.out.println(s2.getAllData()[0]);
+        ////////////////////////////
+        Student s3 = new Student();
 
     }
 
