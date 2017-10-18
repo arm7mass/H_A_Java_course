@@ -31,7 +31,7 @@ public class NewMain {
         System.out.println(s2.getAllData()[0]);
         ////////////////////////////
         Student s3 = new Student();
-
+        System.out.println(s3.getAllDataInString());
     }
 
 }
