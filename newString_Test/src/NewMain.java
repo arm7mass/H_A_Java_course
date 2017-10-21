@@ -23,6 +23,8 @@ public class NewMain {
         str=c.nextLine();
         StringTool c1 = new StringTool(str);
         c1.PrintVharByChar();
+        System.out.println("//////inreverse//////");
+        c1.printcharBycharinverse();
     }
     
 }
