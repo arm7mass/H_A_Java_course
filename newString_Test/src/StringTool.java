@@ -2,8 +2,9 @@
 public class StringTool {
 
     String text;
-    private String inverseText;
+    String inverseText;
     String texts[];
+    String TextArray;
 
     public StringTool(String text) {
         this.text = text;
@@ -11,6 +12,7 @@ public class StringTool {
 
     public StringTool(String texts[]) {
         this.texts = texts;
+        TextArray = "";
     }
 
     public void PrintVharByChar() {
@@ -32,6 +34,14 @@ public class StringTool {
         for (String s : texts) {
             System.out.println(s);
         }
+    }
+
+    public String getStringArrayElements() {
+        for (String s : texts) {
+            TextArray += s + ";";
+        }
+        return TextArray;
+
     }
 
 }

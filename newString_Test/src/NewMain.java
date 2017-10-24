@@ -58,6 +58,12 @@ public class NewMain {
         x.texts=arr4;
         x.printString();
         
+        ///// return array elements 
+        String st[]={"Abdul7","abdul8","abdul9"};
+        StringTool c7 = new StringTool(st);
+        System.out.println(c7.getStringArrayElements());
+        
+        
 
     }
 
