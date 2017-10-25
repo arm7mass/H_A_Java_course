@@ -1,11 +1,10 @@
 
 public class IntegerTools {
-    // attributes 
 
+    // attributes 
     public int numbers[];
     private int sum1;
     private int sum2;
-    
 
     // constructors 
     public IntegerTools(int numbers[]) {
@@ -19,12 +18,12 @@ public class IntegerTools {
         }
         return sum1;
     }
-    
+
     // method without return 
-    public void getSum_Array(){
-        for (int x : numbers ){
+    public void getSum_Array() {
+        for (int x : numbers) {
             sum2 += x;
-         
+
         }
         System.out.println(sum2);
     }

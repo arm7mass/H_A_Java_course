@@ -14,13 +14,13 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int nums []={2,4,6,8,10};
+        int nums[] = {2, 4, 6, 8, 10};
         IntegerTools i = new IntegerTools(nums);
         //with return 
         System.out.println(i.getSumArray());
         //without return 
         i.getSum_Array();
-        
+
     }
-    
+
 }
