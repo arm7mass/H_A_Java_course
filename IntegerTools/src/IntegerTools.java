@@ -34,7 +34,7 @@ public class IntegerTools {
         }
         System.out.println(sum2);
     }
-
+     // method to add additional two array elements 
     public int[] getAdditionalTwoArray() {
         int numadd[] = new int[numbers1.length];
         if (numbers1.length != numbers2.length) {
