@@ -41,7 +41,7 @@ public class IntegerTools {
             System.out.println(" the two array is not equal ");
             return numadd;
         } else {
-            for (int x = 0; x > numbers1.length; x++) {
+            for (int x = 0; x < numbers1.length; x++) {
                 numadd[x] = numbers1[x] + numbers2[x];
             }
             return numadd;

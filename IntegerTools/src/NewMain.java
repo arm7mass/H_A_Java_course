@@ -20,6 +20,15 @@ public class NewMain {
         System.out.println(i.getSumArray());
         //without return 
         i.getSum_Array();
+        
+        int nums1[]= {1,2,3,4};
+        int nums2[]= {4,5,6,7};
+        int result[];
+        IntegerTools i1 = new IntegerTools(nums1,nums2);
+        result = i1.getAdditionalTwoArray();
+        for (int x : result ){
+            System.out.println(x);
+        }
 
     }
 
