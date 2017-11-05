@@ -15,13 +15,15 @@ public class TwoDArray {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //two Dimensional Array
         String namesTables [][]  = new String [2][3];
         namesTables [0][0]="abdul1";
         namesTables [0][1]="abdul2";
         namesTables [0][3]="abdul3";
         namesTables [1][0]="abdul4";        
         namesTables [1][1]="abdul5";        
-        namesTables [1][2]="abdul6";        
+        namesTables [1][2]="abdul6"; 
+        
                 
     }
     
