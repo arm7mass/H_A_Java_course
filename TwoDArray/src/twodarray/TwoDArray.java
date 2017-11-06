@@ -36,7 +36,7 @@ public class TwoDArray {
                 System.out.print(str2 + "  *  ");
             }
         }
-        // intilize two dimension array 
+        // initialize two dimension array 
         String names1[] = {"abdul1", "abdul2", "abdul3"};
         String names2[] = {"abdul4", "abdul5", "abdul6"};
         String names3[] = {"abdul7", "abdul8", "abdul9"};
