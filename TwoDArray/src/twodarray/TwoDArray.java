@@ -23,7 +23,7 @@ public class TwoDArray {
         namesTables[1][0] = "abdul4";
         namesTables[1][1] = "abdul5";
         namesTables[1][2] = "abdul6";
-       // for loop to print  Two Dimensional Array ++++++++++
+        // for loop to print  Two Dimensional Array ++++++++++
         for (int x = 0; x < namesTables.length; x++) {
             for (int y = 0; y < namesTables[x].length; y++) {
                 System.out.println(namesTables[x][y]);
@@ -31,12 +31,17 @@ public class TwoDArray {
             System.out.println("xxxxxxxxxxxxxxxxxxxxxxx");
         }
         //Enhanced for loop to print  Two Dimensional Array ++++++++++
-        for (String str1[] : namesTables){
-            for (String str2 : str1){
-                System.out.print(str2+"  *  ");
+        for (String str1[] : namesTables) {
+            for (String str2 : str1) {
+                System.out.print(str2 + "  *  ");
             }
         }
-
+        // intilize two dimension array 
+        String names1[] = {"abdul1", "abdul2", "abdul3"};
+        String names2[] = {"abdul4", "abdul5", "abdul6"};
+        String names3[] = {"abdul7", "abdul8", "abdul9"};
+        String namesTable[][]= {names1,names2,names3};
+        String names_Table[][]={{"abdul1", "abdul2", "abdul3"},{"abdul4", "abdul5", "abdul6"},{"abdul7", "abdul8", "abdul9"}};
     }
 
 }
