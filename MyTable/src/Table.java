@@ -11,7 +11,7 @@ public class Table {
         Items = new Object[0][columns];
     }
 
-    // Method 
+    // Method to add new row 
     public void addNewRow(Object row[]) {
         Object TempItems[][] = Items;    // transfer the old Items from main variable  to temporary variable
         Items = new Object[Items.length + 1][columns];   // increase the main variable with additional one item 
@@ -19,6 +19,17 @@ public class Table {
             Items[x] = TempItems[x];
         }
         Items[Items.length - 1] = row;  // adding new row to main variable 
+    }
+
+    // method to print the array 
+    public void PrintItems() {
+        for (Object objs[] : Items) {
+            for (Object obj : objs) {
+                System.out.print(obj + " ; ");
+            }
+            System.out.println();
+        }
+
     }
 
 }
