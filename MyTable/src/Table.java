@@ -21,7 +21,7 @@ public class Table {
         Items[Items.length - 1] = row;  // adding new row to main variable 
     }
 
-    // method to print the array 
+    // method to print the Two Dimension array 
     public void PrintItems() {
         for (Object objs[] : Items) {
             for (Object obj : objs) {
