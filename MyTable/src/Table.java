@@ -29,7 +29,10 @@ public class Table {
             }
             System.out.println();
         }
-
     }
 
+    // method to edit the two dimension array eliments
+    public void editRow(int rowIndex, int columnIndex, Object newData) {
+        Items[rowIndex][columnIndex] = newData;
+    }
 }

@@ -14,7 +14,7 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         Table t = new Table(3);
         Object obj1[] = {"abdul1", "abdul2", "abdul3"};
         Object obj2[] = {"abdul4", "abdul5", "abdul6"};
@@ -22,6 +22,10 @@ public class NewMain {
         t.addNewRow(obj2);
         t.addNewRow(new Object[]{"abdul7", "abdul8", "abdul9"});
         t.PrintItems();
+        System.out.println("------------------");
+        t.editRow(1, 2, "abdul10");
+        t.editRow(0, 2, "abdul.abdul");
+        t.PrintItems();
     }
-    
+
 }
