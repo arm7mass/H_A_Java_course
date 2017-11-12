@@ -35,4 +35,18 @@ public class Table {
     public void editRow(int rowIndex, int columnIndex, Object newData) {
         Items[rowIndex][columnIndex] = newData;
     }
+
+    // method to delete Row from Two dimnesional Array 
+    public void DeleteRow(int RowIndex) {
+        Object TempItem[][] = Items;
+        Items = new Object[Items.length - 1][columns];
+        int y = 0;
+        for (int x = 0; x < TempItem.length; x++) {
+            if (x != RowIndex) {
+                Items[y] = TempItem[x];
+                y++;
+            }
+        }
+    }
+
 }

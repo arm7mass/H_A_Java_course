@@ -25,6 +25,7 @@ public class NewMain {
         System.out.println("------------------");
         t.editRow(1, 2, "abdul10");
         t.editRow(0, 2, "abdul.abdul");
+        t.DeleteRow(1);
         t.PrintItems();
     }
 
