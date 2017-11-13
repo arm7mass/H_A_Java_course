@@ -49,4 +49,13 @@ public class Table {
         }
     }
 
+    // method to return value 
+    public Object getValue(int RowIndex, int columnIndex) {
+        return Items[RowIndex][columnIndex];
+    }
+
+    public Object[] getRow(int RowIndex) {
+        return Items[RowIndex];
+    }
+
 }

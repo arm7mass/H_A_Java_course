@@ -25,7 +25,11 @@ public class NewMain {
         System.out.println("------------------");
         t.editRow(1, 2, "abdul10");
         t.editRow(0, 2, "abdul.abdul");
-        t.DeleteRow(1);
+        System.out.println("get one Value :");
+        System.out.println(t.getValue(0, 0));
+        System.out.println(t.getRow(1)[1]);
+        System.out.println("---------------");
+        t.DeleteRow(2);
         t.PrintItems();
     }
 
