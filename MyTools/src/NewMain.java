@@ -15,6 +15,8 @@ public class NewMain {
      */
     public static void main(String[] args) {
         Tools.msgBox("My Name is abdul");
+        Tools.createFolder("abdul", "E:");
+        Tools.createFolder("abdul");
     }
     
 }
