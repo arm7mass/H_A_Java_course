@@ -17,6 +17,8 @@ public class NewMain {
         Tools.msgBox("My Name is abdul");
         Tools.createFolder("abdul", "E:");
         Tools.createFolder("abdul");
+        Tools.openForm(new form1());
+        Tools.openForm(new form2());
     }
     
 }
