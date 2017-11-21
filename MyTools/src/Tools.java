@@ -52,4 +52,13 @@ public class Tools {
         }
         
     }
+    public static void CreateEmptyFile (String FileName){
+        
+        File f = new File(FileName);
+        try {
+            f.createNewFile();
+        } catch (IOException ex) {
+            Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
