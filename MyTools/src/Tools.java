@@ -1,4 +1,6 @@
 
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -7,6 +9,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 public class Tools {
 
@@ -35,6 +38,17 @@ public class Tools {
             form.setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+    }
+    public static void  ClearText (Container form){
+        for (Component c : form.getComponents()){
+            if ( c instanceof JTextField ){
+                JTextField txt = (JTextField)c;
+                txt.setText("");
+            }else if ( c instanceof Container){
+                ClearText((Container)c);
+            }
         }
         
     }
