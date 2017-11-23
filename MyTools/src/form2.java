@@ -29,15 +29,23 @@ public class form2 extends javax.swing.JFrame {
         txtFilename = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnCreatefile = new javax.swing.JButton();
+        btncreateFile = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel2.setText("FileName:");
 
-        btnCreatefile.setText("Create");
+        btnCreatefile.setText("Create File");
         btnCreatefile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreatefileActionPerformed(evt);
+            }
+        });
+
+        btncreateFile.setText("Create CustomFile");
+        btncreateFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncreateFileActionPerformed(evt);
             }
         });
 
@@ -53,7 +61,9 @@ public class form2 extends javax.swing.JFrame {
                 .addGap(171, 171, 171))
             .addGroup(layout.createSequentialGroup()
                 .addGap(132, 132, 132)
-                .addComponent(btnCreatefile)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btncreateFile)
+                    .addComponent(btnCreatefile))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -65,7 +75,9 @@ public class form2 extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(59, 59, 59)
                 .addComponent(btnCreatefile)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btncreateFile)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
@@ -74,6 +86,11 @@ public class form2 extends javax.swing.JFrame {
     private void btnCreatefileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreatefileActionPerformed
         Tools.CreateEmptyFile(txtFilename.getText() + ".txt");
     }//GEN-LAST:event_btnCreatefileActionPerformed
+
+    private void btncreateFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncreateFileActionPerformed
+        Object Data[] = {"abdul", 'a', 123, 1.6, true};
+        Tools.CreateFile(txtFilename.getText() + ".txt", Data);
+    }//GEN-LAST:event_btncreateFileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -112,6 +129,7 @@ public class form2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreatefile;
+    private javax.swing.JButton btncreateFile;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtFilename;
     // End of variables declaration//GEN-END:variables

@@ -3,7 +3,9 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.Image;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -28,8 +30,9 @@ public class Tools {
         f.mkdir();
 
     }
-    public static void openForm (JFrame form ){
-        
+
+    public static void openForm(JFrame form) {
+
         try {
             form.setLocationRelativeTo(null);
             Image img = ImageIO.read(Tools.class.getResource("pic.jpg"));
@@ -39,25 +42,40 @@ public class Tools {
         } catch (IOException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
-                
+
     }
-    public static void  ClearText (Container form){
-        for (Component c : form.getComponents()){
-            if ( c instanceof JTextField ){
-                JTextField txt = (JTextField)c;
+
+    public static void ClearText(Container form) {
+        for (Component c : form.getComponents()) {
+            if (c instanceof JTextField) {
+                JTextField txt = (JTextField) c;
                 txt.setText("");
-            }else if ( c instanceof Container){
-                ClearText((Container)c);
+            } else if (c instanceof Container) {
+                ClearText((Container) c);
             }
         }
-        
+
     }
-    public static void CreateEmptyFile (String FileName){
-        
+
+    public static void CreateEmptyFile(String FileName) {
+
         File f = new File(FileName);
         try {
             f.createNewFile();
         } catch (IOException ex) {
+            Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static void CreateFile(String FileName, Object MyData[]) {
+        try {
+            PrintWriter p = new PrintWriter(FileName);
+            for (Object obj : MyData) {
+                p.println(obj);
+
+            }
+            p.close();
+        } catch (FileNotFoundException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
