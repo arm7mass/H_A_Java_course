@@ -30,6 +30,7 @@ public class form2 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnCreatefile = new javax.swing.JButton();
         btncreateFile = new javax.swing.JButton();
+        btnTestInput = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,35 +50,45 @@ public class form2 extends javax.swing.JFrame {
             }
         });
 
+        btnTestInput.setText("Test InputBox");
+        btnTestInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTestInputActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtFilename, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                .addGap(171, 171, 171))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btncreateFile)
-                    .addComponent(btnCreatefile))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtFilename, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+                .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btncreateFile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCreatefile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTestInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(217, 217, 217))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtFilename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(59, 59, 59)
+                    .addComponent(jLabel2)
+                    .addComponent(txtFilename, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btnCreatefile)
                 .addGap(18, 18, 18)
                 .addComponent(btncreateFile)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnTestInput)
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         pack();
@@ -91,6 +102,11 @@ public class form2 extends javax.swing.JFrame {
         Object Data[] = {"abdul", 'a', 123, 1.6, true};
         Tools.CreateFile(txtFilename.getText() + ".txt", Data);
     }//GEN-LAST:event_btncreateFileActionPerformed
+
+    private void btnTestInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestInputActionPerformed
+       Object obj =  Tools.InputBox("Please Enter your Name ");
+        Tools.msgBox("Welcome"+" : "+obj);
+    }//GEN-LAST:event_btnTestInputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,6 +145,7 @@ public class form2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreatefile;
+    private javax.swing.JButton btnTestInput;
     private javax.swing.JButton btncreateFile;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtFilename;

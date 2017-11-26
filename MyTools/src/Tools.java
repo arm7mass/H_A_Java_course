@@ -79,4 +79,8 @@ public class Tools {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public static Object InputBox (String title){
+        Object myobj = JOptionPane.showInputDialog(title);
+        return myobj ;
+    }
 }
