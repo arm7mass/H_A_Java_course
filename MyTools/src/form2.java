@@ -31,6 +31,8 @@ public class form2 extends javax.swing.JFrame {
         btnCreatefile = new javax.swing.JButton();
         btncreateFile = new javax.swing.JButton();
         btnTestInput = new javax.swing.JButton();
+        btngetnumber = new javax.swing.JButton();
+        btngetIntnumber = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +59,20 @@ public class form2 extends javax.swing.JFrame {
             }
         });
 
+        btngetnumber.setText("GetNumber");
+        btngetnumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngetnumberActionPerformed(evt);
+            }
+        });
+
+        btngetIntnumber.setText("GetIntNumber");
+        btngetIntnumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngetIntnumberActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,11 +85,14 @@ public class form2 extends javax.swing.JFrame {
                 .addGap(34, 34, 34))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btncreateFile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCreatefile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnTestInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(217, 217, 217))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btngetIntnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btncreateFile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCreatefile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnTestInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btngetnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(213, 213, 213))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,7 +107,11 @@ public class form2 extends javax.swing.JFrame {
                 .addComponent(btncreateFile)
                 .addGap(18, 18, 18)
                 .addComponent(btnTestInput)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btngetnumber)
+                .addGap(18, 18, 18)
+                .addComponent(btngetIntnumber)
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,9 +127,19 @@ public class form2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncreateFileActionPerformed
 
     private void btnTestInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestInputActionPerformed
-       Object obj =  Tools.InputBox("Please Enter your Name ");
-        Tools.msgBox("Welcome"+" : "+obj);
+        Object obj = Tools.InputBox("Please Enter your Name ");
+        Tools.msgBox("Welcome" + " : " + obj);
     }//GEN-LAST:event_btnTestInputActionPerformed
+
+    private void btngetnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngetnumberActionPerformed
+        Tools.msgBox(Tools.GetNumber("111hfdsaf559876325"));
+
+    }//GEN-LAST:event_btngetnumberActionPerformed
+
+    private void btngetIntnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngetIntnumberActionPerformed
+        int num = Tools.GetIntNumber("1adsgsdg2");
+        Tools.msgBox(String.valueOf(num));
+    }//GEN-LAST:event_btngetIntnumberActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,6 +180,8 @@ public class form2 extends javax.swing.JFrame {
     private javax.swing.JButton btnCreatefile;
     private javax.swing.JButton btnTestInput;
     private javax.swing.JButton btncreateFile;
+    private javax.swing.JButton btngetIntnumber;
+    private javax.swing.JButton btngetnumber;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtFilename;
     // End of variables declaration//GEN-END:variables

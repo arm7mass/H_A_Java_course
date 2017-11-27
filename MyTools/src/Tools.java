@@ -79,8 +79,29 @@ public class Tools {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public static Object InputBox (String title){
+
+    public static Object InputBox(String title) {
         Object myobj = JOptionPane.showInputDialog(title);
-        return myobj ;
+        return myobj;
+    }
+
+    public static String GetNumber(String text) {
+        String val = "";
+        for (char c : text.toCharArray()) {
+            if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9') {
+                val += c;
+            }
+        }
+        return val;
+    }
+
+    public static int GetIntNumber(String text) {
+        String val = "";
+        for (char c : text.toCharArray()) {
+            if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9') {
+                val += c;
+            }
+        }
+        return Integer.parseInt(val);
     }
 }
