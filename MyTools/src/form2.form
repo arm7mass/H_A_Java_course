@@ -32,14 +32,15 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btngetIntnumber" min="-2" pref="125" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btngetIntnumber" pref="125" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btncreateFile" max="32767" attributes="0"/>
                       <Component id="btnCreatefile" max="32767" attributes="0"/>
                       <Component id="btnTestInput" alignment="0" max="32767" attributes="0"/>
                       <Component id="btngetnumber" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="btnRemoveNumber" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
           </Group>
@@ -63,7 +64,9 @@
               <Component id="btngetnumber" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btngetIntnumber" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="150" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnRemoveNumber" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="107" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -114,6 +117,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btngetIntnumberActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRemoveNumber">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="RemoveNumber"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveNumberActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
