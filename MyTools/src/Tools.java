@@ -15,24 +15,28 @@ import javax.swing.JTextField;
 
 public class Tools {
 
+    // Static Class MsgBox Method
     public static void msgBox(String Message) {
         JOptionPane.showMessageDialog(null, Message);
     }
 
+    //Static Class Create Folder Method
     public static void createFolder(String Foldername, String path) {
         File f = new File(path + "/" + Foldername);
         f.mkdir();
-
+        
     }
 
+    //Static Class Create Folder Method
     public static void createFolder(String Foldername) {
         File f = new File(Foldername);
         f.mkdir();
-
+        
     }
 
+    // Static Class Open New Form Method
     public static void openForm(JFrame form) {
-
+        
         try {
             form.setLocationRelativeTo(null);
             Image img = ImageIO.read(Tools.class.getResource("pic.jpg"));
@@ -42,9 +46,10 @@ public class Tools {
         } catch (IOException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
 
+    //Static Java Clear J Text Field Method
     public static void ClearText(Container form) {
         for (Component c : form.getComponents()) {
             if (c instanceof JTextField) {
@@ -54,12 +59,13 @@ public class Tools {
                 ClearText((Container) c);
             }
         }
-
+        
     }
 
+    //Static Create Empty File Method
     public static void CreateEmptyFile(String FileName) {
-
-        File f = new File(FileName);
+        
+        File f = new File(FileName + ".txt");
         try {
             f.createNewFile();
         } catch (IOException ex) {
@@ -67,12 +73,20 @@ public class Tools {
         }
     }
 
+    //Static Create Empty Files
+    public static void CreateEmptyFile(String FileName[]) {
+        for (String str : FileName) {
+            Tools.CreateEmptyFile(str);
+        }
+    }
+
+    // Create Data txt File Method
     public static void CreateFile(String FileName, Object MyData[]) {
         try {
             PrintWriter p = new PrintWriter(FileName);
             for (Object obj : MyData) {
                 p.println(obj);
-
+                
             }
             p.close();
         } catch (FileNotFoundException ex) {
@@ -80,11 +94,13 @@ public class Tools {
         }
     }
 
+    //Static Class Input Box Method
     public static Object InputBox(String title) {
         Object myobj = JOptionPane.showInputDialog(title);
         return myobj;
     }
 
+    //Get Number From String Method
     public static String GetNumber(String text) {
         String val = "";
         for (char c : text.toCharArray()) {
@@ -95,6 +111,7 @@ public class Tools {
         return val;
     }
 
+    //Get Number Or (integer number) From String Method
     public static int GetIntNumber(String text) {
         String val = "";
         for (char c : text.toCharArray()) {
@@ -105,6 +122,7 @@ public class Tools {
         return Integer.parseInt(val);
     }
 
+    //Static remove Number Method
     public static String RemoveNumber(String text) {
         String val = "";
         for (char c : text.toCharArray()) {
@@ -114,5 +132,5 @@ public class Tools {
         }
         return val;
     }
-
+    
 }

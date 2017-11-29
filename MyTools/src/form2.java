@@ -34,6 +34,7 @@ public class form2 extends javax.swing.JFrame {
         btngetnumber = new javax.swing.JButton();
         btngetIntnumber = new javax.swing.JButton();
         btnRemoveNumber = new javax.swing.JButton();
+        btnCreateEmptyFiles = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +82,13 @@ public class form2 extends javax.swing.JFrame {
             }
         });
 
+        btnCreateEmptyFiles.setText("Create Empty Files");
+        btnCreateEmptyFiles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateEmptyFilesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,12 +103,12 @@ public class form2 extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btngetIntnumber, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btncreateFile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCreatefile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnTestInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btngetnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnRemoveNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btncreateFile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCreatefile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTestInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btngetnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRemoveNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCreateEmptyFiles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(213, 213, 213))
         );
         layout.setVerticalGroup(
@@ -122,7 +130,9 @@ public class form2 extends javax.swing.JFrame {
                 .addComponent(btngetIntnumber)
                 .addGap(18, 18, 18)
                 .addComponent(btnRemoveNumber)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnCreateEmptyFiles)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
@@ -155,6 +165,11 @@ public class form2 extends javax.swing.JFrame {
     private void btnRemoveNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveNumberActionPerformed
         Tools.msgBox(Tools.RemoveNumber("111hfdsaf559876325"));
     }//GEN-LAST:event_btnRemoveNumberActionPerformed
+
+    private void btnCreateEmptyFilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEmptyFilesActionPerformed
+        String file1[]={"abdul1" ,"abdul2","abdul3","abdul4"};
+        Tools.CreateEmptyFile(file1);
+    }//GEN-LAST:event_btnCreateEmptyFilesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,6 +207,7 @@ public class form2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCreateEmptyFiles;
     private javax.swing.JButton btnCreatefile;
     private javax.swing.JButton btnRemoveNumber;
     private javax.swing.JButton btnTestInput;
