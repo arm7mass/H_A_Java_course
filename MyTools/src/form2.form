@@ -27,21 +27,23 @@
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="txtFilename" pref="464" max="32767" attributes="0"/>
+              <Component id="txtFilename" pref="585" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btngetIntnumber" pref="125" max="32767" attributes="0"/>
-                  <Component id="btncreateFile" max="32767" attributes="0"/>
-                  <Component id="btnCreatefile" max="32767" attributes="0"/>
-                  <Component id="btnTestInput" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btngetnumber" max="32767" attributes="0"/>
-                  <Component id="btnRemoveNumber" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnCreateEmptyFiles" max="32767" attributes="0"/>
+                  <Component id="btnRemoveNumber" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btngetIntnumber" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btngetnumber" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnTestInput" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnCreatefile" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btncreateFile" alignment="1" pref="198" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+              <Component id="btncreatefiles" min="-2" pref="198" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,7 +58,10 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnCreatefile" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btncreateFile" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btncreateFile" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btncreatefiles" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnTestInput" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -67,7 +72,7 @@
               <Component id="btnRemoveNumber" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnCreateEmptyFiles" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="64" max="32767" attributes="0"/>
+              <EmptySpace pref="82" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,7 +87,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnCreatefile">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Create File"/>
+        <Property name="text" type="java.lang.String" value="Create Empty  File"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreatefileActionPerformed"/>
@@ -90,7 +95,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btncreateFile">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Create CustomFile"/>
+        <Property name="text" type="java.lang.String" value="Create  File with Data"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncreateFileActionPerformed"/>
@@ -134,6 +139,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateEmptyFilesActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btncreatefiles">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Create Files With Data"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncreatefilesActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

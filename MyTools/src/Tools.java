@@ -24,19 +24,19 @@ public class Tools {
     public static void createFolder(String Foldername, String path) {
         File f = new File(path + "/" + Foldername);
         f.mkdir();
-        
+
     }
 
     //Static Class Create Folder Method
     public static void createFolder(String Foldername) {
         File f = new File(Foldername);
         f.mkdir();
-        
+
     }
 
     // Static Class Open New Form Method
     public static void openForm(JFrame form) {
-        
+
         try {
             form.setLocationRelativeTo(null);
             Image img = ImageIO.read(Tools.class.getResource("pic.jpg"));
@@ -46,7 +46,7 @@ public class Tools {
         } catch (IOException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     //Static Java Clear J Text Field Method
@@ -59,12 +59,12 @@ public class Tools {
                 ClearText((Container) c);
             }
         }
-        
+
     }
 
     //Static Create Empty File Method
     public static void CreateEmptyFile(String FileName) {
-        
+
         File f = new File(FileName + ".txt");
         try {
             f.createNewFile();
@@ -80,17 +80,24 @@ public class Tools {
         }
     }
 
-    // Create Data txt File Method
+    // Static Class Create Data txt File Method
     public static void CreateFile(String FileName, Object MyData[]) {
         try {
-            PrintWriter p = new PrintWriter(FileName);
+            PrintWriter p = new PrintWriter(FileName + ".txt");
             for (Object obj : MyData) {
                 p.println(obj);
-                
+
             }
             p.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    // Static Class Create Data txt Files Method
+    public static void CreateFiles(String FileNames[], Object AllData[][]) {
+        for (int x = 0; x < FileNames.length; x++) {
+            CreateFile(FileNames[x], AllData[x]);
         }
     }
 
@@ -132,5 +139,5 @@ public class Tools {
         }
         return val;
     }
-    
+
 }

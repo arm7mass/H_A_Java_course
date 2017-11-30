@@ -35,19 +35,20 @@ public class form2 extends javax.swing.JFrame {
         btngetIntnumber = new javax.swing.JButton();
         btnRemoveNumber = new javax.swing.JButton();
         btnCreateEmptyFiles = new javax.swing.JButton();
+        btncreatefiles = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel2.setText("FileName:");
 
-        btnCreatefile.setText("Create File");
+        btnCreatefile.setText("Create Empty  File");
         btnCreatefile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreatefileActionPerformed(evt);
             }
         });
 
-        btncreateFile.setText("Create CustomFile");
+        btncreateFile.setText("Create  File with Data");
         btncreateFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncreateFileActionPerformed(evt);
@@ -89,6 +90,13 @@ public class form2 extends javax.swing.JFrame {
             }
         });
 
+        btncreatefiles.setText("Create Files With Data");
+        btncreatefiles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncreatefilesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,19 +105,21 @@ public class form2 extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtFilename, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+                .addComponent(txtFilename, javax.swing.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE)
                 .addGap(34, 34, 34))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(142, 142, 142)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btngetIntnumber, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(btncreateFile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCreatefile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnTestInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btngetnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCreateEmptyFiles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRemoveNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCreateEmptyFiles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(213, 213, 213))
+                    .addComponent(btngetIntnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btngetnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTestInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCreatefile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btncreateFile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
+                .addGap(72, 72, 72)
+                .addComponent(btncreatefiles, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,7 +131,9 @@ public class form2 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnCreatefile)
                 .addGap(18, 18, 18)
-                .addComponent(btncreateFile)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btncreateFile)
+                    .addComponent(btncreatefiles))
                 .addGap(18, 18, 18)
                 .addComponent(btnTestInput)
                 .addGap(18, 18, 18)
@@ -132,7 +144,7 @@ public class form2 extends javax.swing.JFrame {
                 .addComponent(btnRemoveNumber)
                 .addGap(18, 18, 18)
                 .addComponent(btnCreateEmptyFiles)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         pack();
@@ -167,9 +179,20 @@ public class form2 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRemoveNumberActionPerformed
 
     private void btnCreateEmptyFilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEmptyFilesActionPerformed
-        String file1[]={"abdul1" ,"abdul2","abdul3","abdul4"};
+        String file1[] = {"abdul1", "abdul2", "abdul3", "abdul4"};
         Tools.CreateEmptyFile(file1);
     }//GEN-LAST:event_btnCreateEmptyFilesActionPerformed
+
+    private void btncreatefilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncreatefilesActionPerformed
+        Object names1[] = {"abdul1", "abdul2", "abdul3"};
+        Object names2[] = {"abdul3", "abdul4", "abdul5"};
+        Object names3[] = {"abdul6", "abdul7", "abdul8"};
+        String FileNames[] = {"file1", "file2", "file3"};
+        Object allNames[][] = {names1, names2, names3};
+        Tools.CreateFiles(FileNames, allNames);
+
+
+    }//GEN-LAST:event_btncreatefilesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,6 +235,7 @@ public class form2 extends javax.swing.JFrame {
     private javax.swing.JButton btnRemoveNumber;
     private javax.swing.JButton btnTestInput;
     private javax.swing.JButton btncreateFile;
+    private javax.swing.JButton btncreatefiles;
     private javax.swing.JButton btngetIntnumber;
     private javax.swing.JButton btngetnumber;
     private javax.swing.JLabel jLabel2;
