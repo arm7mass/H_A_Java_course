@@ -36,6 +36,7 @@ public class form2 extends javax.swing.JFrame {
         btnRemoveNumber = new javax.swing.JButton();
         btnCreateEmptyFiles = new javax.swing.JButton();
         btncreatefiles = new javax.swing.JButton();
+        btnPrintScreen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +98,13 @@ public class form2 extends javax.swing.JFrame {
             }
         });
 
+        btnPrintScreen.setText("Print Screen");
+        btnPrintScreen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintScreenActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -118,7 +126,9 @@ public class form2 extends javax.swing.JFrame {
                     .addComponent(btnCreatefile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btncreateFile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
                 .addGap(72, 72, 72)
-                .addComponent(btncreatefiles, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btncreatefiles, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                    .addComponent(btnPrintScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -134,8 +144,13 @@ public class form2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btncreateFile)
                     .addComponent(btncreatefiles))
-                .addGap(18, 18, 18)
-                .addComponent(btnTestInput)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnTestInput))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btnPrintScreen)))
                 .addGap(18, 18, 18)
                 .addComponent(btngetnumber)
                 .addGap(18, 18, 18)
@@ -144,7 +159,7 @@ public class form2 extends javax.swing.JFrame {
                 .addComponent(btnRemoveNumber)
                 .addGap(18, 18, 18)
                 .addComponent(btnCreateEmptyFiles)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();
@@ -194,6 +209,11 @@ public class form2 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btncreatefilesActionPerformed
 
+    private void btnPrintScreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintScreenActionPerformed
+        Tools.PrintScreen("myimage");
+        Tools.PrintScreen1("myimage2", this);
+    }//GEN-LAST:event_btnPrintScreenActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -232,6 +252,7 @@ public class form2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateEmptyFiles;
     private javax.swing.JButton btnCreatefile;
+    private javax.swing.JButton btnPrintScreen;
     private javax.swing.JButton btnRemoveNumber;
     private javax.swing.JButton btnTestInput;
     private javax.swing.JButton btncreateFile;

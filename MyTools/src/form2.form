@@ -42,7 +42,10 @@
                   <Component id="btncreateFile" alignment="1" pref="198" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-              <Component id="btncreatefiles" min="-2" pref="198" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btncreatefiles" pref="198" max="32767" attributes="0"/>
+                  <Component id="btnPrintScreen" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -62,8 +65,16 @@
                   <Component id="btncreateFile" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btncreatefiles" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnTestInput" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnTestInput" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="btnPrintScreen" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btngetnumber" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -72,7 +83,7 @@
               <Component id="btnRemoveNumber" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnCreateEmptyFiles" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="82" max="32767" attributes="0"/>
+              <EmptySpace pref="71" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -147,6 +158,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncreatefilesActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnPrintScreen">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Print Screen"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrintScreenActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

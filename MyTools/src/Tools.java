@@ -1,7 +1,13 @@
 
+import java.awt.AWTException;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.HeadlessException;
 import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -138,6 +144,33 @@ public class Tools {
             }
         }
         return val;
+    }
+
+    // static Print Screen method and save it to file 
+    public static void PrintScreen(String ImageName) {
+        try {
+            Robot r = new Robot();
+            Rectangle re = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+            BufferedImage img = r.createScreenCapture(re);
+            ImageIO.write(img, "jpg", new File(ImageName + ".jpg"));
+        } catch (AWTException | HeadlessException | IOException ex) {
+            Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    // static print screen method and save to file with minimize the form 
+    public static void PrintScreen1(String ImageName2, JFrame form) {
+        form.setState(1);//minimize the form 
+        try {
+            Robot r = new Robot();
+            Rectangle re = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+            BufferedImage img = r.createScreenCapture(re);
+            ImageIO.write(img,"jpg",new File(ImageName2+".jpg"));
+        } catch (Exception ex) {
+            Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        form.setState(0);//maximize the form 
     }
 
 }
