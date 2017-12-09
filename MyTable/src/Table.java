@@ -18,7 +18,7 @@ public class Table {
         for (int x = 0; x < TempItems.length; x++) {     // return the previouse Items from the Temporary variable to main variable 
             Items[x] = TempItems[x];
         }
-        Items[Items.length - 1] = row;  // adding new row to main variable 
+        Items[Items.length - 1] = row;  // here we add the new row to the array  
     }
 
     // method to print the Two Dimension array 
