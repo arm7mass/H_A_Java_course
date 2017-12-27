@@ -10,6 +10,11 @@ package testinheritence;
  * @author ARM-PC
  */
 public class Nokia1 extends Phone {
-    String camera ;
-    String bluetooth ;
+
+    public Nokia1() {
+        System.out.println("Nkia1 is created" + "\n");
+    }
+
+    String camera;
+    String bluetooth;
 }
