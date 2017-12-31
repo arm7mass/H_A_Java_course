@@ -12,6 +12,7 @@ package testinheritence;
 public class Nokia1 extends Phone {
 
     public Nokia1() {
+        super("salem");
         System.out.println("Nkia1 is created" + "\n");
     }
 

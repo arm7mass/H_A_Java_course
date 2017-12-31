@@ -11,8 +11,8 @@ package testinheritence;
  */
 public class Phone {
 
-    public Phone() {
-        System.out.println("Phone is created ");
+    public Phone(String YourName ) {
+        System.out.println(" (constractor )Phone is created ");
     }
 
     public String name;

@@ -15,7 +15,7 @@ public class TestInheritence {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Phone p = new Phone();
+        Phone p = new Phone("Abdulrhman ");
         Nokia1 n = new Nokia1();
         Nokia2 n2 = new Nokia2();
         LG lg = new LG();

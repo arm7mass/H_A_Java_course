@@ -10,5 +10,8 @@ package testinheritence;
  * @author ARM-PC
  */
 public class LG extends Nokia2 {
+    public LG(){
+        System.out.println("My Constructor");
+    }
 
 }
