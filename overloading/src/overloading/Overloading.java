@@ -5,6 +5,8 @@
  */
 package overloading;
 
+import overriding.MyName2;
+
 /**
  *
  * @author ARM-PC
@@ -19,6 +21,9 @@ public class Overloading {
         mn.PrintName();
         mn.PrintName("Abdulrhman");
         mn.PrintName("Abdulrhman", "Masoud");
+        MyName2 mn1 = new MyName2();
+        mn1.PrintName();
+        mn1.PrintName("Abdulrhman ");
     }
 
 }

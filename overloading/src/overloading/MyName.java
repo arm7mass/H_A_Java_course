@@ -19,7 +19,7 @@ public class MyName {
         System.out.println(Name);
     }
 
-    public void PrintName(String Fname, String LName) {
+    public final void PrintName(String Fname, String LName) {
         System.out.println(Fname + " " + LName);
     }
 
