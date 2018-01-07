@@ -21,6 +21,8 @@ public class MyName {
 
     public final void PrintName(String Fname, String LName) {
         System.out.println(Fname + " " + LName);
+        System.out.println();
     }
+    
 
 }

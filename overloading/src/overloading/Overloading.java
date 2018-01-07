@@ -24,6 +24,7 @@ public class Overloading {
         MyName2 mn1 = new MyName2();
         mn1.PrintName();
         mn1.PrintName("Abdulrhman ");
+        System.out.println();
     }
 
 }

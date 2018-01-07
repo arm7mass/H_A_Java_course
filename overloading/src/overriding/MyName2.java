@@ -23,6 +23,7 @@ public class MyName2 extends MyName {
     public void PrintName(String Name) {
         System.out.println(Name + " " + "this is ovverriding Method ");
         System.out.println();
+        System.out.println();
     }
 
 }
