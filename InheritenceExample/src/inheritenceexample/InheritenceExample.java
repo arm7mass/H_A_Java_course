@@ -14,6 +14,7 @@ public class InheritenceExample {
     /**
      * @param args the command line arguments
      */
+    //Polymorphism Example
     public static void GetType(Person p) {
         p.GetpersonType();
     }
