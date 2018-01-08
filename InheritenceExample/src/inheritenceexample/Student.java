@@ -11,6 +11,11 @@ package inheritenceexample;
  */
 public class Student extends Person {
 
+    @Override
+    public void GetpersonType() {
+        System.out.println("Student");
+    }
+
     public String CardID;
     public String BranchName;
 

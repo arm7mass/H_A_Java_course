@@ -11,6 +11,11 @@ package inheritenceexample;
  */
 public class Doctor extends Employee {
 
+    @Override
+    public void GetpersonType() {
+        System.out.println("Doctor");
+    }
+
     public String CertificateYear;
     public String DoctorateTitle;
     public String DoctorateDetails;

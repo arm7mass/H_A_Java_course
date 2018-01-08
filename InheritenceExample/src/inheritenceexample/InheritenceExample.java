@@ -14,12 +14,27 @@ public class InheritenceExample {
     /**
      * @param args the command line arguments
      */
+    public static void GetType(Person p) {
+        p.GetpersonType();
+    }
+
     public static void main(String[] args) {
         Person p = new Person("abdul");
         Customer c = new Customer("Masoud");
         Student s = new Student("Salem");
         Employee e = new Employee("Salem");
         Doctor d = new Doctor("Nada");
+        GetType(p);
+        GetType(c);
+        GetType(s);
+        GetType(e);
+        GetType(d);
+
+        p.GetpersonType();
+        c.GetpersonType();
+        s.GetpersonType();
+        e.GetpersonType();
+        d.GetpersonType();
 
         System.out.println(p.name);
         System.out.println(c.name);

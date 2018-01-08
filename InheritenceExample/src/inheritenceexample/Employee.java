@@ -20,6 +20,11 @@ public class Employee extends Person {
         super(PersonName);
     }
 
+    @Override
+    public void GetpersonType() {
+        System.out.println("Employee");
+    }
+
     public String getSSN() {
         return SSN;
     }

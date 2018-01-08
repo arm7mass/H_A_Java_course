@@ -23,6 +23,11 @@ public class Person {
     public Person(String PersonName) {
         name = PersonName;
     }
+
+    public void GetpersonType() {
+        System.out.println("Person");
+    }
+
     public int calcDateOfBirth(String BirthYear) {
         Date d = new Date();
         SimpleDateFormat f = new SimpleDateFormat("yyyy");
