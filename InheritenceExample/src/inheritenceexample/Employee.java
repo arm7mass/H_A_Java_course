@@ -5,6 +5,8 @@
  */
 package inheritenceexample;
 
+import inheritenceexample.InheritenceExample.floor;
+
 /**
  *
  * @author ARM-PC
@@ -24,6 +26,7 @@ public class Employee extends Person {
     public void GetpersonType() {
         System.out.println("Employee");
     }
+    public floor workplace;
 
     public String getSSN() {
         return SSN;

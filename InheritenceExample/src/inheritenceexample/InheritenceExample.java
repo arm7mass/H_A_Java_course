@@ -14,6 +14,10 @@ public class InheritenceExample {
     /**
      * @param args the command line arguments
      */
+    //Enumeration 
+    public enum floor {
+        F1,F2,F3,F4;
+    }
     //Polymorphism Example
     public static void GetType(Person p) {
         p.GetpersonType();
@@ -42,6 +46,12 @@ public class InheritenceExample {
         System.out.println(s.name);
         System.out.println(e.name);
         System.out.println(d.name);
+        d.clinic=floor.F1;
+        e.workplace=floor.F2;
+        System.out.println(d.clinic);
+        System.out.println(e.workplace);
+        
+        
 
     }
 
