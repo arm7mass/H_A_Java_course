@@ -16,8 +16,14 @@ public class InheritenceExample {
      */
     //Enumeration 
     public enum floor {
-        F1,F2,F3,F4;
+        F1, F2, F3, F4;
+        // Enum constructor 
+
+        private floor() {
+            System.out.println(" I am Enum constructor ");
+        }
     }
+
     //Polymorphism Example
     public static void GetType(Person p) {
         p.GetpersonType();
@@ -29,6 +35,7 @@ public class InheritenceExample {
         Student s = new Student("Salem");
         Employee e = new Employee("Salem");
         Doctor d = new Doctor("Nada");
+        //Polymorphism
         GetType(p);
         GetType(c);
         GetType(s);
@@ -46,12 +53,11 @@ public class InheritenceExample {
         System.out.println(s.name);
         System.out.println(e.name);
         System.out.println(d.name);
-        d.clinic=floor.F1;
-        e.workplace=floor.F2;
+        // Enum
+        d.clinic = floor.F1;
+        e.workplace = floor.F2;
         System.out.println(d.clinic);
         System.out.println(e.workplace);
-        
-        
 
     }
 

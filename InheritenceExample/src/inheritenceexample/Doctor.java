@@ -17,8 +17,8 @@ public class Doctor extends Employee {
     public void GetpersonType() {
         System.out.println("Doctor");
     }
-    
-    public floor clinic ;
+
+    public floor clinic;
 
     public String CertificateYear;
     public String DoctorateTitle;
