@@ -19,7 +19,11 @@ public class EnumExample {
         e.EmpNo = 12554;
         e.EmpName = "Abdulrhman";
         e.EmpAdress = "Doha";
-        e.WorkFloor = Floor.f1;
+        e.WorkFloor = Floor.f3;
+        e.WorkFloor.setNum(1000000000);
+        System.out.println(e.WorkFloor.getNum() + " " + e.WorkFloor.getName());
+        e.WorkFloor = Floor.f5;
+        System.out.println(e.WorkFloor.getNum() + " " + e.WorkFloor.getName());
     }
-
+    
 }

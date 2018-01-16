@@ -10,7 +10,11 @@ package enumexample;
  * @author ARM-PC
  */
 public enum Floor {
-    f1(1), f2("Abdul"), f3(2, "masoud"), f4(), f5;
+    f1(1, "Abdul1"), f2(2, "Abdu2"), f3(2, "masoud"), f4(3, "abdul4"), f5(4, "abdul5");
+    private int num;
+    private String name;
+
+    /*
 
     private Floor() {
         System.out.println("This is Enum");
@@ -23,9 +27,27 @@ public enum Floor {
     private Floor(String name) {
         System.out.println("This is Enum with String ");
     }
+     */
+    private Floor(int num, String name) {
+        // System.out.println("This is Enum with String and Int");
+        this.num = num;
+        this.name = name;
+    }
 
-    private Floor(int a, String b) {
-        System.out.println("This is Enum with String and Int");
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 }
