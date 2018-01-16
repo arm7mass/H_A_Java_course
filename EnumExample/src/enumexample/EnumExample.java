@@ -15,15 +15,19 @@ public class EnumExample {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Employee e = new Employee();
+        Employee e = new Employee(Floor.f1);
         e.EmpNo = 12554;
         e.EmpName = "Abdulrhman";
         e.EmpAdress = "Doha";
+        /*
         e.WorkFloor = Floor.f3;
         e.WorkFloor.setNum(1000000000);
         System.out.println(e.WorkFloor.getNum() + " " + e.WorkFloor.getName());
         e.WorkFloor = Floor.f5;
         System.out.println(e.WorkFloor.getNum() + " " + e.WorkFloor.getName());
+         */
+       
+        System.out.println(e.getWorkFloor().getNum() + " " + e.getWorkFloor().name());
     }
-    
+
 }

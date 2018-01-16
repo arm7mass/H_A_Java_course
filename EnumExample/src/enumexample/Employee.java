@@ -14,6 +14,19 @@ public class Employee {
     public int EmpNo;
     public String EmpName;
     public String EmpAdress;
-    public Floor WorkFloor;
+    private Floor WorkFloor;
+
+    public Employee(Floor WorkFloor) {
+        this.WorkFloor = WorkFloor;
+    }
+
+    public Floor getWorkFloor() {
+        return WorkFloor;
+    }
+
+    public void setWorkFloor(Floor WorkFloor) {
+        this.WorkFloor = WorkFloor;
+    }
+    
 
 }

@@ -10,7 +10,7 @@ package enumexample;
  * @author ARM-PC
  */
 public enum Floor {
-    f1(1, "Abdul1"), f2(2, "Abdu2"), f3(2, "masoud"), f4(3, "abdul4"), f5(4, "abdul5");
+    f1(1, "Abdul1"), f2(2, "Abdu2"), f3(3, "masoud"), f4(4, "abdul4"), f5(5, "abdul5");
     private int num;
     private String name;
 
