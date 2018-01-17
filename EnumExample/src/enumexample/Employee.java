@@ -1,23 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package enumexample;
 
-/**
- *
- * @author ARM-PC
- */
 public class Employee {
 
     public int EmpNo;
     public String EmpName;
     public String EmpAdress;
     private Floor WorkFloor;
+    public FloorType type;
 
-    public Employee(Floor WorkFloor) {
+    public Employee(Floor WorkFloor, FloorType type) {
         this.WorkFloor = WorkFloor;
+        this.type = type;
     }
 
     public Floor getWorkFloor() {
@@ -27,6 +20,5 @@ public class Employee {
     public void setWorkFloor(Floor WorkFloor) {
         this.WorkFloor = WorkFloor;
     }
-    
 
 }

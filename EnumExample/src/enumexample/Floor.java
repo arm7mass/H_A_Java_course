@@ -5,10 +5,10 @@
  */
 package enumexample;
 
-/**
- *
- * @author ARM-PC
- */
+enum FloorType {
+    in, out;
+}
+
 public enum Floor {
     f1(1, "Abdul1"), f2(2, "Abdu2"), f3(3, "masoud"), f4(4, "abdul4"), f5(5, "abdul5");
     private int num;
