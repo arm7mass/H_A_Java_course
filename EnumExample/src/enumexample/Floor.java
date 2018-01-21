@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package enumexample;
 
 enum FloorType {
@@ -11,8 +6,19 @@ enum FloorType {
 
 public enum Floor {
     f1(1, "Abdul1"), f2(2, "Abdu2"), f3(3, "masoud"), f4(4, "abdul4"), f5(5, "abdul5");
+    private static Floor[] ENUMS = Floor.values();
     private int num;
     private String name;
+
+    public static Floor of(int floor) {
+        if (floor < 1 || floor > 4) {
+            System.out.println(" Out of the Range ");
+            return null;
+        } else {
+            return ENUMS[floor - 1];
+
+        }
+    }
 
     /*
 

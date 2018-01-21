@@ -13,11 +13,17 @@ public class EnumExample {
         System.out.println(e.WorkFloor.getNum() + " " + e.WorkFloor.getName());
         e.WorkFloor = Floor.f5;
         System.out.println(e.WorkFloor.getNum() + " " + e.WorkFloor.getName());
-         */
+         
 
         System.out.println(e.getWorkFloor().getNum());
         System.out.println(e.getWorkFloor().name());
         System.out.println(e.type);
+        
+        Employee e2 = new Employee(Floor.f2,FloorType.out );
+        System.out.println(e2.getWorkFloor().getNum());
+        System.out.println(e2.type);
     }
-
+*/
+        System.out.println(Floor.of(1));
+    }
 }
