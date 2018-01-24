@@ -9,8 +9,8 @@ package test_interface;
  *
  * @author ARM-PC
  */
-public interface calc1 {
-    public int add();
-    public int sub();
+public interface calc1 extends calc2 {
+    public int add(int num1, int num2);
+    public int sub(int num1, int num2);
     
 }

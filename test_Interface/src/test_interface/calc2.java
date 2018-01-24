@@ -9,8 +9,10 @@ package test_interface;
  *
  * @author ARM-PC
  */
-public interface calc2 {
-    public int multi();
-    public int div();
-        
+public interface calc2 extends calc3 {
+
+    public int multi(int num1, int num2);
+
+    public int div(int num1, int num2);
+
 }

@@ -15,7 +15,11 @@ public class Test_Interface {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        calc c = new calc();
+        System.out.println(c.add(8, 4));
+        System.out.println(c.sub(8, 4));
+        System.out.println(c.multi(8, 4));
+        System.out.println(c.div(8, 4));
     }
-    
+
 }

@@ -9,27 +9,27 @@ package test_interface;
  *
  * @author ARM-PC
  */
-public class calc implements calc1, calc2, calc3 {
+public class calc implements calc1 {
 
     @Override
-    public int add() {
-        return 0;
+    public int add(int num1, int num2) {
+        return num1 + num2;
     }
 
     @Override
-    public int sub() {
-        return 0;
+    public int sub(int num1, int num2) {
+        return num1 - num2;
 
     }
 
     @Override
-    public int multi() {
-        return 0;
+    public int multi(int num1, int num2) {
+        return num1 * num2;
     }
 
     @Override
-    public int div() {
-        return 0;
+    public int div(int num1, int num2) {
+        return num1 / num2;
     }
 
     @Override

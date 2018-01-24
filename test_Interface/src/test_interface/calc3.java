@@ -10,6 +10,8 @@ package test_interface;
  * @author ARM-PC
  */
 public interface calc3 {
+
     public int mod();
+
     public void test();
 }
