@@ -41,7 +41,14 @@ public class Company {
 
             }
         }.printName();
+        // Anonymous Object As parameter
+        MyPrint(new Emp());
 
+    }
+    // Anonymous Object As parameter
+
+    static void MyPrint(Emp emp) {
+        emp.printName();
     }
 
 }
