@@ -44,6 +44,25 @@ public class Company {
         // Anonymous Object As parameter
         MyPrint(new Emp());
 
+        // anonymous as parameter 
+        // option Number 1
+        Emp e1 = new Emp() {
+            @Override
+            public void printName() {
+                System.out.println("Anonymous As parameter option 1 ");
+            }
+        };
+        MyPrint(e1);
+
+        // option Number 2
+        MyPrint(new Emp() {
+            @Override
+            public void printName() {
+                System.out.println("Anonymous As parameter option 2 ");
+            }
+
+        });
+
     }
     // Anonymous Object As parameter
 
