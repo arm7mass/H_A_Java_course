@@ -10,14 +10,18 @@ import javax.swing.JPanel;
 public class MyDraw {
 
     private final JFrame form;
-    
+    private int wform;
+    private int hform;
 
     public MyDraw(JFrame form) {
         this.form = form;
+        wform = form.getWidth();
+        hform = form.getHeight();
+
     }
     public int border = 1;
     public Color color = Color.black;
-    
+
 // Draw line method 
     public void DrawLine(int x1, int y1, int x2, int y2) {
         JPanel pnl = new JPanel() {
@@ -32,5 +36,19 @@ public class MyDraw {
         form.add(pnl);
         pnl.setBounds(0, 0, form.getWidth(), form.getHeight());
     }
-// 
+// Draw rectangle Method 
+
+    public void DrawRect(int x, int y, int width, int height) {
+        JPanel pnl = new JPanel() {
+            @Override
+            public void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setStroke(new BasicStroke(border));
+                g2.setColor(color);
+                g2.drawRect(x, y, width, height);
+            }
+        };
+        form.add(pnl);
+        pnl.setBounds(0, 0, wform, hform);
+    }
 }
