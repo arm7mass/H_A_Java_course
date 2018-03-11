@@ -10,7 +10,8 @@ public class MyTool2 {
         d.border = 10;
         d.color = Color.blue;
        // d.DrawLine(10, 30, 150, 30);
-        d.DrawRect(10, 30, 100, 50);
+       //d.DrawRect(10, 30, 100, 50);
+       d.DrawOval(100, 100, 100, 100);
         f.setVisible(true);
 
     }

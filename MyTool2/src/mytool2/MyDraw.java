@@ -51,4 +51,20 @@ public class MyDraw {
         form.add(pnl);
         pnl.setBounds(0, 0, wform, hform);
     }
+// Draw Oval Method 
+
+    public void DrawOval(int x, int y, int width, int height) {
+        JPanel pnl = new JPanel() {
+            @Override
+            public void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setColor(color);
+                g2.setStroke(new BasicStroke(border));
+                g2.drawOval(x, y, width, height);
+            }
+        };
+        form.add(pnl);
+        pnl.setBounds(0, 0, wform, hform);
+
+    }
 }
