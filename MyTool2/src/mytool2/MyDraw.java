@@ -2,22 +2,23 @@ package mytool2;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MyDraw {
-
+    
     private final JFrame form;
     private int wform;
     private int hform;
-
+    
     public MyDraw(JFrame form) {
         this.form = form;
         wform = form.getWidth();
         hform = form.getHeight();
-
+        
     }
     public int border = 1;
     public Color color = Color.black;
@@ -65,7 +66,7 @@ public class MyDraw {
         };
         form.add(pnl);
         pnl.setBounds(0, 0, wform, hform);
-
+        
     }
 // Draw Polygon Method 
 
@@ -81,5 +82,22 @@ public class MyDraw {
         };
         form.add(pnl);
         pnl.setBounds(0, 0, wform, hform);
+    }
+// Draw String Method
+
+    public void DrawString(int x, int y, String text, String fontname, int fontsize) {
+        JPanel pnl = new JPanel() {
+            @Override
+            public void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setColor(color);
+                Font font = new Font(fontname, Font.BOLD, fontsize);
+                g2.setFont(font);
+                g2.drawString(text, x, y);
+            }
+        };
+        form.add(pnl);
+        pnl.setBounds(0, 0, wform, hform);
+        
     }
 }
