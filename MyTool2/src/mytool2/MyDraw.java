@@ -67,4 +67,19 @@ public class MyDraw {
         pnl.setBounds(0, 0, wform, hform);
 
     }
+// Draw Polygon Method 
+
+    public void DrawPolygon(int xpoints[], int ypoints[], int npoints) {
+        JPanel pnl = new JPanel() {
+            @Override
+            public void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setColor(color);
+                g2.setStroke(new BasicStroke(border));
+                g2.drawPolygon(xpoints, ypoints, npoints);
+            }
+        };
+        form.add(pnl);
+        pnl.setBounds(0, 0, wform, hform);
+    }
 }
