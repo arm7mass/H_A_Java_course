@@ -5,20 +5,25 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class MyDraw {
-    
+
     private final JFrame form;
     private int wform;
     private int hform;
-    
+
     public MyDraw(JFrame form) {
         this.form = form;
         wform = form.getWidth();
         hform = form.getHeight();
-        
+
     }
     public int border = 1;
     public Color color = Color.black;
@@ -66,7 +71,7 @@ public class MyDraw {
         };
         form.add(pnl);
         pnl.setBounds(0, 0, wform, hform);
-        
+
     }
 // Draw Polygon Method 
 
@@ -98,6 +103,26 @@ public class MyDraw {
         };
         form.add(pnl);
         pnl.setBounds(0, 0, wform, hform);
-        
+
+    }
+// Draw Image Method
+
+    public void DrawImage(int x, int y, String path) {
+        JPanel pnl = new JPanel() {
+            @Override
+            public void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                File imgfile = new File(path);
+                try {
+                    Image imge = ImageIO.read(imgfile);
+                    g2.drawImage(imge, x, y, form);
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+
+                }
+            }
+        };
+        form.add(pnl);
+        pnl.setBounds(0, 0, wform, hform);
     }
 }
