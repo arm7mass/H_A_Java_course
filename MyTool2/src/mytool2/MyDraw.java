@@ -14,16 +14,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class MyDraw {
-
+    
     private final JFrame form;
     private int wform;
     private int hform;
-
+    
     public MyDraw(JFrame form) {
         this.form = form;
         wform = form.getWidth();
         hform = form.getHeight();
-
+        
     }
     public int border = 1;
     public Color color = Color.black;
@@ -71,7 +71,7 @@ public class MyDraw {
         };
         form.add(pnl);
         pnl.setBounds(0, 0, wform, hform);
-
+        
     }
 // Draw Polygon Method 
 
@@ -103,7 +103,7 @@ public class MyDraw {
         };
         form.add(pnl);
         pnl.setBounds(0, 0, wform, hform);
-
+        
     }
 // Draw Image Method
 
@@ -118,9 +118,25 @@ public class MyDraw {
                     g2.drawImage(imge, x, y, form);
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
-
+                    
                 }
             }
+        };
+        form.add(pnl);
+        pnl.setBounds(0, 0, wform, hform);
+    }
+
+    // Draw Round Rectangle
+    public void DrawRoundRect(int x, int y, int width, int height, int BorderRadius) {
+        JPanel pnl = new JPanel() {
+            @Override
+            public void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setColor(color);
+                g2.setStroke(new BasicStroke(border));
+                g2.drawRoundRect(x, y, width, height, BorderRadius, BorderRadius);
+            }
+            
         };
         form.add(pnl);
         pnl.setBounds(0, 0, wform, hform);
