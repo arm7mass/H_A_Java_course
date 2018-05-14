@@ -46,7 +46,7 @@ public class Tools {
 
         try {
             form.setLocationRelativeTo(null);
-            Image img = ImageIO.read(Tools.class.getResource("pic.jpg"));
+            Image img = ImageIO.read(Tools.class.getResource("image.jpg"));
             form.setIconImage(img);
             form.setDefaultCloseOperation(2);
             form.setVisible(true);
