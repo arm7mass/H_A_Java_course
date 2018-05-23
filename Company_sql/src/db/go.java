@@ -30,7 +30,7 @@ public class go {
         }
     }
 
-    /* method to check the user name and password */
+    // method to check the user name and password 
     public static Boolean checkUserAndPass(String username, String password) {
 
         try {
@@ -50,5 +50,45 @@ public class go {
         }
         return false;
 
+    }
+
+    // Method to recieve query and excute it in database (insert , update , delete
+    public static boolean runNonQuery(String sqlStatement) {
+        try {
+            setConnection();
+            Statement stmt = con.createStatement();
+            stmt.execute(sqlStatement);
+            con.close();
+            return true;
+        } catch (SQLException ex) {
+            Tools.msgBox(ex.getMessage());
+            return false;
+
+        }
+
+    }
+
+    // method to search within the data base for large number and 1 to it 
+    //the method require table name and numeric column name with primary key 
+    public static String getAutoNumber(String tableName, String columnName) {
+        try {
+            setConnection();
+            Statement stmt = con.createStatement();
+            String strAuto = "select max (" + columnName + ")+1 as autonum " + "from " + tableName;
+            stmt.executeQuery(strAuto);
+            String num = "";
+            while (stmt.getResultSet().next()) {
+                num = stmt.getResultSet().getString("atonum");
+            }
+            con.close();
+            if (num == null || "".equals(num)) {
+                return "1";
+            } else {
+                return num;
+            }
+        } catch (SQLException ex) {
+            Tools.msgBox(ex.getMessage());
+            return "0";
+        }
     }
 }
