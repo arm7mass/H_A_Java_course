@@ -1,12 +1,17 @@
 package db;
 
 import company_sql.Tools;
+import company_sql.Tools.Table;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 
 public class go {
 
@@ -91,4 +96,61 @@ public class go {
             return "0";
         }
     }
+
+    //Method That recieve Statement query and return a Table with the statment Inside 
+    public static Table getTableData(String statement) {
+        Tools t = new Tools();
+        try {
+            setConnection();
+            Statement stmt = con.createStatement();
+            ResultSet rs;
+            rs = stmt.executeQuery(statement);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int c = rsmd.getColumnCount();
+            Table table = t.new Table(c);
+            while (rs.next()) {
+                Object row[] = new Object[c];
+                for (int i = 0; i < c; i++) {
+                    row[i] = rs.getString(i + 1);
+                }
+                table.addNewRow(row);
+            }
+            con.close();
+            return table;
+
+        } catch (SQLException ex) {
+            Tools.msgBox(ex.getMessage());
+            return t.new Table(0);
+
+        }
+    }
+
+    //Create Method that its input will be table name , column name , Jcombo Box 
+    //it will fill combo Box through column 
+    public static void fillCombo(String tableName, String columnName, JComboBox combo) {
+        try {
+            setConnection();
+            Statement stmt = con.createStatement();
+            ResultSet rs;
+            String strSelect = "select" + columnName + "from" + tableName;
+            rs = stmt.executeQuery(strSelect);
+            rs.last();    // put record set on the last row to count the number of rows
+            int c = rs.getRow();  // get the number of rows 
+            rs.beforeFirst(); //go back to starting points
+            String values[] = new String[c];
+            int i = 0;
+            while (rs.next()) { // go through column row by row 
+                values[i] = rs.getString(1);
+                i++;
+            }
+            con.close();
+            combo.setModel(new DefaultComboBoxModel(values));// fill combo with the matrix values 
+
+        } catch (SQLException ex) {
+            Tools.msgBox(ex.getMessage());
+
+        }
+
+    }
+
 }
