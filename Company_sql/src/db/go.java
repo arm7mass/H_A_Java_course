@@ -8,10 +8,13 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class go {
 
@@ -41,7 +44,7 @@ public class go {
         try {
             setConnection();
             Statement stmt = con.createStatement();
-            // sql statment : select from users where username ='username' and pass ='password' ;
+            // sql select statment : select from users where username ='username' and pass ='password' ;
             String strCheck = "select * from users where username ='" + username + "'and pass ='" + password + "'";
             stmt.execute(strCheck);
             while (stmt.getResultSet().next()) {
@@ -97,7 +100,7 @@ public class go {
         }
     }
 
-    //Method That recieve Statement query and return a Table with the statment Inside 
+    //Method That recieve select Statement query and return a Table with the statment Inside 
     public static Table getTableData(String statement) {
         Tools t = new Tools();
         try {
@@ -151,6 +154,44 @@ public class go {
 
         }
 
+    }
+// moooooooooooooost important Method **************************************
+    // Method recieves select statement or table name and fill the Jtable 
+
+    public static void fillToJTable(String TableNameOrSelectStatement, JTable table) {
+        try {
+            setConnection();
+            Statement stmt = con.createStatement();
+            ResultSet rs;
+            String SPart = TableNameOrSelectStatement.substring(0, 7).toLowerCase(); // cut only first 7 part of the variable the change it to lower case 
+            String strSelect;
+            if ("select ".equals(SPart)) {
+                strSelect = TableNameOrSelectStatement; // select statement was sent 
+            } else {
+                strSelect = "select * from " + TableNameOrSelectStatement; //table name was sent 
+            }
+            rs = stmt.executeQuery(strSelect);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int c = rsmd.getColumnCount(); // number of table column 
+            DefaultTableModel model = (DefaultTableModel) table.getModel(); // creating the table
+            Vector row = new Vector();// used to fill the table 
+            model.setRowCount(0);// remove all row from the table 
+            while (rs.next()) { // while loop according to row number .next()
+                row = new Vector(c); // new row according to column number 
+                for (int i = 1; i <= c; i++) { // check column one by one and store its value in the row 
+                    row.add(rs.getString(i)); // for this we start from one 
+                }
+                model.addRow(row);
+            }// after ending while loop all rows will be filled 
+            if (table.getColumnCount() != c) {
+                Tools.msgBox("Jtable Columns count is not equal to query column count \n Jtable count is :" + table.getColumnCount() + "\n Query column count is : " + c);
+
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Tools.msgBox(ex.getMessage());
+
+        }
     }
 
 }
