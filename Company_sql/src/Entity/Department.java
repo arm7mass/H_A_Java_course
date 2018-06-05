@@ -63,32 +63,42 @@ public class Department implements mainData {
 
     @Override
     public String getAutoNumber() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //String strAuto = db.go.getAutoNumber("department", "deptno");
+        //return strAuto;
+        return db.go.getAutoNumber("dpartment", "DeptNo");
     }
 
     @Override
     public void getAllRows(JTable table) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        db.go.fillToJTable("department_data", table);
+
     }
 
     @Override
     public void getOneRow(JTable table) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String strSelect = " select * from department_data " + "where DeptNo = " + DeptNo;
+        db.go.fillToJTable(strSelect, table);
+
     }
 
     @Override
     public void getCustomRows(String statement, JTable table) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        db.go.fillToJTable(statement, table);
     }
 
     @Override
     public String getValueByName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String strSelect = "select DeptNo from department " + "where department ='" + name + "'";
+        String strVal = (String) db.go.getTableData(strSelect).Items[0][0];
+        return strVal;
     }
 
     @Override
     public String getNameByValue(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String strSelect = "select deptname from department " + "where DeptNo = " + DeptNo;
+        String strName = (String) db.go.getTableData(strSelect).Items[0][0];
+        return strName;
+
     }
 
 }
