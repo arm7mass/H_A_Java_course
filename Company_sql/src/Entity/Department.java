@@ -44,7 +44,7 @@ public class Department implements mainData {
 
     @Override
     public void update() {
-        String strUpdate = "update department set " + "DeptName" + DeptName + "," + "Location ' " + Location + "'" + "where DeptNo= " + DeptNo;
+        String strUpdate = "update department set " + "DeptName= '" + DeptName + "'," + " Location='" + Location + "' " + "where DeptNo =" + DeptNo;
         boolean isUpdate = db.go.runNonQuery(strUpdate);
         if (isUpdate) {
             Tools.msgBox("Department is updated ");
@@ -54,10 +54,10 @@ public class Department implements mainData {
 
     @Override
     public void delete() {
-        String strDelete = "delete from department " + "where department No = " + DeptNo;
+        String strDelete = "delete from department " + "where DeptNo = " + DeptNo;
         boolean isDelete = db.go.runNonQuery(strDelete);
         if (isDelete) {
-            Tools.msgBox("Department is updated ");
+            Tools.msgBox("Department is Deleted ");
         }
     }
 
@@ -65,7 +65,7 @@ public class Department implements mainData {
     public String getAutoNumber() {
         //String strAuto = db.go.getAutoNumber("department", "deptno");
         //return strAuto;
-        return db.go.getAutoNumber("dpartment", "DeptNo");
+        return db.go.getAutoNumber("department", "DeptNo");
     }
 
     @Override
@@ -76,7 +76,7 @@ public class Department implements mainData {
 
     @Override
     public void getOneRow(JTable table) {
-        String strSelect = " select * from department_data " + "where DeptNo = " + DeptNo;
+        String strSelect = "select * from department_data " + " where department_no =" + DeptNo;
         db.go.fillToJTable(strSelect, table);
 
     }
@@ -88,14 +88,14 @@ public class Department implements mainData {
 
     @Override
     public String getValueByName(String name) {
-        String strSelect = "select DeptNo from department " + "where department ='" + name + "'";
+        String strSelect = "select DeptNo from department " + "where deptname ='" + name + "'";
         String strVal = (String) db.go.getTableData(strSelect).Items[0][0];
         return strVal;
     }
 
     @Override
     public String getNameByValue(String value) {
-        String strSelect = "select deptname from department " + "where DeptNo = " + DeptNo;
+        String strSelect = "select deptname from department " + "where DeptNo =" + value;
         String strName = (String) db.go.getTableData(strSelect).Items[0][0];
         return strName;
 

@@ -82,11 +82,11 @@ public class go {
         try {
             setConnection();
             Statement stmt = con.createStatement();
-            String strAuto = "select max (" + columnName + ")+1 as autonum " + "from " + tableName;
+            String strAuto = "select max(" + columnName + ")+1 as autonum " + "from " + tableName;
             stmt.executeQuery(strAuto);
             String num = "";
             while (stmt.getResultSet().next()) {
-                num = stmt.getResultSet().getString("atonum");
+                num = stmt.getResultSet().getString("autonum");
             }
             con.close();
             if (num == null || "".equals(num)) {
