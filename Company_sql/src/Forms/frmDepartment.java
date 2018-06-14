@@ -102,8 +102,18 @@ public class frmDepartment extends javax.swing.JFrame {
         });
 
         btnFind.setText("Find");
+        btnFind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindActionPerformed(evt);
+            }
+        });
 
         btnAll.setText("All");
+        btnAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAllActionPerformed(evt);
+            }
+        });
 
         btnClear.setText("Clear");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
@@ -315,6 +325,17 @@ public class frmDepartment extends javax.swing.JFrame {
         clearData();
         dept.getAllRows(tblDept);
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
+        String strDeptNo = (String)Tools.InputBox("Please enter Department NUmber"); // user will enter the deptnumber
+        int deptno = Integer.parseInt(strDeptNo);// make as integer 
+        dept.setDeptNo(deptno); 
+        dept.getOneRow(tblDept); // Get all numbers
+    }//GEN-LAST:event_btnFindActionPerformed
+
+    private void btnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAllActionPerformed
+        dept.getAllRows(tblDept);
+    }//GEN-LAST:event_btnAllActionPerformed
 
     /**
      * @param args the command line arguments
