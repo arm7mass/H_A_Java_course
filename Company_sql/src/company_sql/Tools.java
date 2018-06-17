@@ -26,6 +26,15 @@ public class Tools {
     public static void msgBox(String Message) {
         JOptionPane.showMessageDialog(null, Message);
     }
+    // Static class confirm Method 
+    public static Boolean confirmMsg(String message){
+        int msgC = JOptionPane.showConfirmDialog(null, message);
+        if (msgC==JOptionPane.YES_OPTION){ // the user press on yes button 
+            return true ;
+        }else{
+            return false ;
+        }
+    }
 
     //Static Class Create Folder Method
     public static void createFolder(String Foldername, String path) {
