@@ -35,7 +35,7 @@ public class Department implements mainData {
 
     @Override
     public void add() {
-        String strInsert = "insert into department value (" + DeptNo + "," + "'" + DeptName + "'," + "'" + Location + "')";
+        String strInsert = "insert into department values (" + DeptNo + "," + "'" + DeptName + "'," + "'" + Location + "')";
         boolean isAdd = db.go.runNonQuery(strInsert);// this is to check if the selected statement is excuted 
         if (isAdd) {
             Tools.msgBox("Department is Added ");
