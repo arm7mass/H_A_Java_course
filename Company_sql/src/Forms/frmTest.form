@@ -27,20 +27,30 @@
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jMyButton1" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnAdd" max="32767" attributes="0"/>
-                      <Component id="btnUpdate" max="32767" attributes="0"/>
-                      <Component id="btnDelete" max="32767" attributes="0"/>
-                      <Component id="btnGetAllRows" max="32767" attributes="0"/>
-                      <Component id="btnGetAutoNumber" max="32767" attributes="0"/>
-                      <Component id="btnGetCusotmRow" max="32767" attributes="0"/>
-                      <Component id="btnGetOneRow" max="32767" attributes="0"/>
-                      <Component id="btnGetValueByName" max="32767" attributes="0"/>
-                      <Component id="btnGetNameByValue" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="btnAdd" max="32767" attributes="0"/>
+                  <Component id="btnUpdate" max="32767" attributes="0"/>
+                  <Component id="btnDelete" max="32767" attributes="0"/>
+                  <Component id="btnGetAllRows" max="32767" attributes="0"/>
+                  <Component id="btnGetAutoNumber" max="32767" attributes="0"/>
+                  <Component id="btnGetCusotmRow" max="32767" attributes="0"/>
+                  <Component id="btnGetOneRow" max="32767" attributes="0"/>
+                  <Component id="btnGetValueByName" max="32767" attributes="0"/>
+                  <Component id="btnGetNameByValue" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="260" max="32767" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="410" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="btnEmpUpdate" max="32767" attributes="0"/>
+                  <Component id="btnEmpAdd" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnGetAllRowsEmp" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnEmpDelete" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnGetAutoNumberEmp" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnGetOneRowEmp" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnGetCustomRowEmp" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnGetValueByNameEmp" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnGetNameByValueEmp" alignment="1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="98" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="561" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -48,30 +58,62 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="61" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="164" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnGetAllRows" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGetAllRowsEmp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnGetAutoNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGetAutoNumberEmp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnGetCusotmRow" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGetCustomRowEmp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnGetOneRow" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGetOneRowEmp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnGetValueByName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGetValueByNameEmp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnGetNameByValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGetNameByValueEmp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jMyButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEmpAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEmpUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEmpDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnGetAllRows" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnGetAutoNumber" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnGetCusotmRow" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnGetOneRow" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnGetValueByName" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnGetNameByValue" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jMyButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="120" max="32767" attributes="0"/>
+              <EmptySpace pref="208" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -103,7 +145,7 @@
     </Component>
     <Component class="controls.JMyButton" name="btnGetAllRows">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Test Get All Rows"/>
+        <Property name="text" type="java.lang.String" value="Dept Test Get All Rows"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetAllRowsActionPerformed"/>
@@ -111,7 +153,7 @@
     </Component>
     <Component class="controls.JMyButton" name="btnGetAutoNumber">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Test Get AutoNumber"/>
+        <Property name="text" type="java.lang.String" value="Dept Test Get AutoNumber"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetAutoNumberActionPerformed"/>
@@ -119,7 +161,7 @@
     </Component>
     <Component class="controls.JMyButton" name="btnGetCusotmRow">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Test Get custom Row"/>
+        <Property name="text" type="java.lang.String" value="Dept Test Get custom Row"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetCusotmRowActionPerformed"/>
@@ -127,7 +169,7 @@
     </Component>
     <Component class="controls.JMyButton" name="btnGetOneRow">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Test Get One Row"/>
+        <Property name="text" type="java.lang.String" value="Dept Test Get One Row"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetOneRowActionPerformed"/>
@@ -135,7 +177,7 @@
     </Component>
     <Component class="controls.JMyButton" name="btnGetValueByName">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Test Get Value By Name "/>
+        <Property name="text" type="java.lang.String" value="Dept Test Get Value By Name "/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetValueByNameActionPerformed"/>
@@ -143,7 +185,7 @@
     </Component>
     <Component class="controls.JMyButton" name="btnGetNameByValue">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Test Get Name By Value"/>
+        <Property name="text" type="java.lang.String" value="Dept Test Get Name By Value"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetNameByValueActionPerformed"/>
@@ -159,10 +201,15 @@
         <Component class="javax.swing.JTable" name="tblTest">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="3" rowCount="2">
+              <Table columnCount="8" rowCount="2">
                 <Column editable="true" title="Title 1" type="java.lang.Object"/>
                 <Column editable="true" title="Title 2" type="java.lang.Object"/>
                 <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                <Column editable="true" title="Title 5" type="java.lang.Object"/>
+                <Column editable="true" title="Title 6" type="java.lang.Object"/>
+                <Column editable="true" title="Title 7" type="java.lang.Object"/>
+                <Column editable="true" title="Title 8" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -197,6 +244,78 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMyButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnEmpAdd">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Test Employee Add"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmpAddActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnEmpUpdate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Test Employee Update"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmpUpdateActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnEmpDelete">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Test Employee Delete"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmpDeleteActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnGetAllRowsEmp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Emp Test Get All Rows"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetAllRowsEmpActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnGetAutoNumberEmp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Emp Test Get AutoNumber"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetAutoNumberEmpActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnGetCustomRowEmp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Emp Test Get Cusotm Row"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetCustomRowEmpActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnGetOneRowEmp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Emp Test Get One Row"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetOneRowEmpActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnGetValueByNameEmp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Emp Test Get Value By Name "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetValueByNameEmpActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnGetNameByValueEmp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Emp Test Get Name By Value"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGetNameByValueEmpActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

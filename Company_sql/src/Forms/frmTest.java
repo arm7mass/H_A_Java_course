@@ -6,6 +6,7 @@
 package Forms;
 
 import Entity.Department;
+import Entity.Employee;
 import company_sql.Tools;
 
 /**
@@ -13,7 +14,7 @@ import company_sql.Tools;
  * @author ARM-PC
  */
 public class frmTest extends javax.swing.JFrame {
-    
+
     Department dept = new Department();
 
     /**
@@ -44,6 +45,15 @@ public class frmTest extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTest = new javax.swing.JTable();
         jMyButton1 = new controls.JMyButton();
+        btnEmpAdd = new controls.JMyButton();
+        btnEmpUpdate = new controls.JMyButton();
+        btnEmpDelete = new controls.JMyButton();
+        btnGetAllRowsEmp = new controls.JMyButton();
+        btnGetAutoNumberEmp = new controls.JMyButton();
+        btnGetCustomRowEmp = new controls.JMyButton();
+        btnGetOneRowEmp = new controls.JMyButton();
+        btnGetValueByNameEmp = new controls.JMyButton();
+        btnGetNameByValueEmp = new controls.JMyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,42 +78,42 @@ public class frmTest extends javax.swing.JFrame {
             }
         });
 
-        btnGetAllRows.setText("Test Get All Rows");
+        btnGetAllRows.setText("Dept Test Get All Rows");
         btnGetAllRows.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGetAllRowsActionPerformed(evt);
             }
         });
 
-        btnGetAutoNumber.setText("Test Get AutoNumber");
+        btnGetAutoNumber.setText("Dept Test Get AutoNumber");
         btnGetAutoNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGetAutoNumberActionPerformed(evt);
             }
         });
 
-        btnGetCusotmRow.setText("Test Get custom Row");
+        btnGetCusotmRow.setText("Dept Test Get custom Row");
         btnGetCusotmRow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGetCusotmRowActionPerformed(evt);
             }
         });
 
-        btnGetOneRow.setText("Test Get One Row");
+        btnGetOneRow.setText("Dept Test Get One Row");
         btnGetOneRow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGetOneRowActionPerformed(evt);
             }
         });
 
-        btnGetValueByName.setText("Test Get Value By Name ");
+        btnGetValueByName.setText("Dept Test Get Value By Name ");
         btnGetValueByName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGetValueByNameActionPerformed(evt);
             }
         });
 
-        btnGetNameByValue.setText("Test Get Name By Value");
+        btnGetNameByValue.setText("Dept Test Get Name By Value");
         btnGetNameByValue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGetNameByValueActionPerformed(evt);
@@ -112,11 +122,11 @@ public class frmTest extends javax.swing.JFrame {
 
         tblTest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
             }
         ));
         jScrollPane1.setViewportView(tblTest);
@@ -128,6 +138,69 @@ public class frmTest extends javax.swing.JFrame {
             }
         });
 
+        btnEmpAdd.setText("Test Employee Add");
+        btnEmpAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpAddActionPerformed(evt);
+            }
+        });
+
+        btnEmpUpdate.setText("Test Employee Update");
+        btnEmpUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpUpdateActionPerformed(evt);
+            }
+        });
+
+        btnEmpDelete.setText("Test Employee Delete");
+        btnEmpDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpDeleteActionPerformed(evt);
+            }
+        });
+
+        btnGetAllRowsEmp.setText("Emp Test Get All Rows");
+        btnGetAllRowsEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetAllRowsEmpActionPerformed(evt);
+            }
+        });
+
+        btnGetAutoNumberEmp.setText("Emp Test Get AutoNumber");
+        btnGetAutoNumberEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetAutoNumberEmpActionPerformed(evt);
+            }
+        });
+
+        btnGetCustomRowEmp.setText("Emp Test Get Cusotm Row");
+        btnGetCustomRowEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetCustomRowEmpActionPerformed(evt);
+            }
+        });
+
+        btnGetOneRowEmp.setText("Emp Test Get One Row");
+        btnGetOneRowEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetOneRowEmpActionPerformed(evt);
+            }
+        });
+
+        btnGetValueByNameEmp.setText("Emp Test Get Value By Name ");
+        btnGetValueByNameEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetValueByNameEmpActionPerformed(evt);
+            }
+        });
+
+        btnGetNameByValueEmp.setText("Emp Test Get Name By Value");
+        btnGetNameByValueEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetNameByValueEmpActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,46 +209,77 @@ public class frmTest extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jMyButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGetAllRows, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGetAutoNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGetCusotmRow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGetOneRow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGetValueByName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGetNameByValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetAllRows, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetAutoNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetCusotmRow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetOneRow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetValueByName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetNameByValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnEmpUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEmpAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetAllRowsEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEmpDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetAutoNumberEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetOneRowEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetCustomRowEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetValueByNameEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetNameByValueEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnGetAllRows, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnGetAutoNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnGetCusotmRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnGetOneRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnGetValueByName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnGetNameByValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jMyButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnGetAllRows, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGetAllRowsEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnGetAutoNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGetAutoNumberEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnGetCusotmRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGetCustomRowEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnGetOneRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGetOneRowEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnGetValueByName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGetValueByNameEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnGetNameByValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGetNameByValueEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jMyButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEmpAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEmpUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEmpDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
 
         pack();
@@ -227,12 +331,73 @@ public class frmTest extends javax.swing.JFrame {
 
     private void jMyButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMyButton1ActionPerformed
         boolean confirm = Tools.confirmMsg("YES");
-        if (confirm){
+        if (confirm) {
             Tools.msgBox("Yes");
-        }else{
+        } else {
             Tools.msgBox("Other");
         }
     }//GEN-LAST:event_jMyButton1ActionPerformed
+
+    private void btnEmpAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpAddActionPerformed
+        Employee emp = new Employee();
+        emp.setEmpNO(1);
+        emp.setEmpName("Abdul4");
+        emp.setAddress("Qatar4");
+        emp.setSalary(3001);
+        emp.setHiringDate("2011-01-04");
+        emp.setBirthDate("1978-01-04");
+        emp.setDeptNO(1);
+        emp.add();
+    }//GEN-LAST:event_btnEmpAddActionPerformed
+
+    private void btnEmpUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpUpdateActionPerformed
+        Employee emp = new Employee();
+        emp.setEmpNO(1);
+        emp.setEmpName("Abdul4");
+        emp.setAddress("Qatar4");
+        emp.setSalary(3001);
+        emp.setHiringDate("2011-01-04");
+        emp.setBirthDate("1978-01-04");
+        emp.setDeptNO(1);
+        emp.update();
+    }//GEN-LAST:event_btnEmpUpdateActionPerformed
+
+    private void btnEmpDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpDeleteActionPerformed
+        Employee emp = new Employee();
+        emp.setEmpNO(1);
+        emp.delete();
+
+    }//GEN-LAST:event_btnEmpDeleteActionPerformed
+
+    private void btnGetAllRowsEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetAllRowsEmpActionPerformed
+        Employee emp = new Employee();
+        emp.getAllRows(tblTest);
+    }//GEN-LAST:event_btnGetAllRowsEmpActionPerformed
+
+    private void btnGetAutoNumberEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetAutoNumberEmpActionPerformed
+        Employee emp = new Employee();
+        Tools.msgBox(emp.getAutoNumber());
+    }//GEN-LAST:event_btnGetAutoNumberEmpActionPerformed
+
+    private void btnGetCustomRowEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetCustomRowEmpActionPerformed
+        Employee emp = new Employee();
+        emp.getCustomRows("select * from employee_data ", tblTest);
+    }//GEN-LAST:event_btnGetCustomRowEmpActionPerformed
+
+    private void btnGetOneRowEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetOneRowEmpActionPerformed
+        Employee emp = new Employee();
+        emp.getOneRow(tblTest);
+    }//GEN-LAST:event_btnGetOneRowEmpActionPerformed
+
+    private void btnGetValueByNameEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetValueByNameEmpActionPerformed
+        Employee emp = new Employee();
+        Tools.msgBox(emp.getValueByName("abdul1"));
+    }//GEN-LAST:event_btnGetValueByNameEmpActionPerformed
+
+    private void btnGetNameByValueEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetNameByValueEmpActionPerformed
+        Employee emp = new Employee();
+        Tools.msgBox(emp.getNameByValue("1"));
+    }//GEN-LAST:event_btnGetNameByValueEmpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,12 +437,21 @@ public class frmTest extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private controls.JMyButton btnAdd;
     private controls.JMyButton btnDelete;
+    private controls.JMyButton btnEmpAdd;
+    private controls.JMyButton btnEmpDelete;
+    private controls.JMyButton btnEmpUpdate;
     private controls.JMyButton btnGetAllRows;
+    private controls.JMyButton btnGetAllRowsEmp;
     private controls.JMyButton btnGetAutoNumber;
+    private controls.JMyButton btnGetAutoNumberEmp;
     private controls.JMyButton btnGetCusotmRow;
+    private controls.JMyButton btnGetCustomRowEmp;
     private controls.JMyButton btnGetNameByValue;
+    private controls.JMyButton btnGetNameByValueEmp;
     private controls.JMyButton btnGetOneRow;
+    private controls.JMyButton btnGetOneRowEmp;
     private controls.JMyButton btnGetValueByName;
+    private controls.JMyButton btnGetValueByNameEmp;
     private controls.JMyButton btnUpdate;
     private controls.JMyButton jMyButton1;
     private javax.swing.JScrollPane jScrollPane1;
