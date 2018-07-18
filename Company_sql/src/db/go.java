@@ -135,7 +135,7 @@ public class go {
             setConnection();
             Statement stmt = con.createStatement();
             ResultSet rs;
-            String strSelect = "select" + columnName + "from" + tableName;
+            String strSelect = "select " + columnName + " from " + tableName;
             rs = stmt.executeQuery(strSelect);
             rs.last();    // put record set on the last row to count the number of rows
             int c = rs.getRow();  // get the number of rows 

@@ -89,15 +89,17 @@
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="txtBirthDate" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtEmpNO" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtAddress" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtEmpName" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtSalary" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtHiringDate" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="cbxDept" min="-2" pref="89" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="btnAddDept" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="txtSalary" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtAddress" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtEmpName" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtEmpNO" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtHiringDate" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -275,32 +277,22 @@
     <Component class="javax.swing.JTextField" name="txtEmpNO">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new controls.JTextBox(15)"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmpName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new controls.JTextBox(15)"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAddress">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new controls.JTextBox(15)"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSearch">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new controls.JTextBox(30)"/>
       </AuxValues>
@@ -310,6 +302,9 @@
     <Component class="com.toedter.calendar.JDateChooser" name="txtBirthDate">
     </Component>
     <Component class="controls.JMyCombo" name="cbxDept">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxDeptActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
@@ -352,9 +347,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSalary">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new controls.JTextBox(15)"/>
       </AuxValues>
@@ -363,41 +355,65 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
+      </Events>
     </Component>
     <Component class="controls.JMyButton" name="btnUpdate">
       <Properties>
         <Property name="text" type="java.lang.String" value="Update"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
+      </Events>
     </Component>
     <Component class="controls.JMyButton" name="btnDelete">
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
+      </Events>
     </Component>
     <Component class="controls.JMyButton" name="btnFind">
       <Properties>
         <Property name="text" type="java.lang.String" value="Find"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFindActionPerformed"/>
+      </Events>
     </Component>
     <Component class="controls.JMyButton" name="btnAll">
       <Properties>
         <Property name="text" type="java.lang.String" value="All"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAllActionPerformed"/>
+      </Events>
     </Component>
     <Component class="controls.JMyButton" name="btnClear">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
+      </Events>
     </Component>
     <Component class="controls.JMyButton" name="btnBack">
       <Properties>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
+      </Events>
     </Component>
     <Component class="controls.JMyButton" name="btnSearch">
       <Properties>
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -409,14 +425,21 @@
         <Component class="javax.swing.JTable" name="tblEmp">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+              <Table columnCount="8" rowCount="4">
+                <Column editable="true" title="Number" type="java.lang.Object"/>
+                <Column editable="true" title="Name" type="java.lang.Object"/>
+                <Column editable="true" title="Address" type="java.lang.Object"/>
+                <Column editable="true" title="Salary" type="java.lang.Object"/>
+                <Column editable="true" title="Hiring Date" type="java.lang.Object"/>
+                <Column editable="true" title="Date Of Birt" type="java.lang.Object"/>
+                <Column editable="true" title="NO" type="java.lang.Object"/>
+                <Column editable="true" title="Departmnt" type="java.lang.Object"/>
               </Table>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblEmpMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -424,6 +447,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddDeptActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

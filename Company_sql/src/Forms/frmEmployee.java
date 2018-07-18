@@ -5,6 +5,12 @@
  */
 package Forms;
 
+import Entity.Department;
+import Entity.Employee;
+import company_sql.Tools;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author ARM-PC
@@ -96,13 +102,12 @@ public class frmEmployee extends javax.swing.JFrame {
         jLabel8.setText("Department :");
 
         txtEmpNO.setEditable(false);
-        txtEmpNO.setText("jTextField1");
 
-        txtEmpName.setText("jTextField1");
-
-        txtAddress.setText("jTextField1");
-
-        txtSearch.setText("jTextField1");
+        cbxDept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxDeptActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Search  By :");
 
@@ -120,38 +125,86 @@ public class frmEmployee extends javax.swing.JFrame {
 
         rdoDept.setText("Department");
 
-        txtSalary.setText("jTextField1");
-
         btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnFind.setText("Find");
+        btnFind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindActionPerformed(evt);
+            }
+        });
 
         btnAll.setText("All");
+        btnAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAllActionPerformed(evt);
+            }
+        });
 
         btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
         btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         tblEmp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Number", "Name", "Address", "Salary", "Hiring Date", "Date Of Birt", "NO", "Departmnt"
             }
         ));
+        tblEmp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblEmpMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblEmp);
 
         btnAddDept.setText("+");
+        btnAddDept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDeptActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,15 +263,16 @@ public class frmEmployee extends javax.swing.JFrame {
                                 .addGap(27, 27, 27)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEmpNO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtHiringDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(cbxDept, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnAddDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(btnAddDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtSalary, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtEmpName, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtEmpNO, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtHiringDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(200, 200, 200)
@@ -302,6 +356,7 @@ public class frmEmployee extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        tblEmp.getTableHeader().setReorderingAllowed(false);
         btnGroup.add(rdoName);
         btnGroup.add(rdoNumber);
         btnGroup.add(rdoSalary);
@@ -309,7 +364,140 @@ public class frmEmployee extends javax.swing.JFrame {
         btnGroup.add(rdoHiring);
         btnGroup.add(rdoBirth);
         btnGroup.add(rdoDept);
+        db.go.fillCombo("department", "deptName", cbxDept);
+        emp.getAllRows(tblEmp);
+        clearData();
     }//GEN-LAST:event_formWindowOpened
+
+    private void cbxDeptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxDeptActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxDeptActionPerformed
+    Department dept = new Department();
+    Employee emp = new Employee();
+    private void btnAddDeptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDeptActionPerformed
+        int deptNO = Integer.parseInt(dept.getAutoNumber());
+        String DeptName = (String) Tools.InputBox("Please Enter Department Name !");
+        String Location = (String) Tools.InputBox("Please Enter department location ");
+        dept.setDeptNo(deptNO);
+        dept.setDeptName(DeptName);
+        dept.setLocation(Location);
+        dept.add();
+        db.go.fillCombo("department", "deptName", cbxDept);
+    }//GEN-LAST:event_btnAddDeptActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.dispose();
+        Tools.openForm(new frmMain());
+    }//GEN-LAST:event_btnBackActionPerformed
+    
+    private void clearData() {
+        Tools.ClearText(this);
+        txtEmpNO.setText(emp.getAutoNumber());
+        btnAdd.setEnabled(true);
+        btnDelete.setEnabled(false);
+        btnUpdate.setEnabled(false);
+        txtEmpName.requestFocus();
+    }
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        clearData();
+    }//GEN-LAST:event_btnClearActionPerformed
+    private void setValues() {
+        emp.setEmpNO(Integer.parseInt(txtEmpNO.getText()));
+        emp.setEmpName(txtEmpName.getText());
+        emp.setAddress(txtAddress.getText());
+        emp.setSalary(Double.parseDouble(txtSalary.getText()));
+        
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        String HDate = String.valueOf(f.format(txtHiringDate.getDate()));
+        String BDate = String.valueOf(f.format(txtBirthDate.getDate()));
+        emp.setHiringDate(HDate);
+        emp.setBirthDate(BDate);
+        
+        String dName = cbxDept.getSelectedItem().toString();
+        String dNO = dept.getValueByName(dName);
+        emp.setDeptNO(Integer.parseInt(dNO));
+        
+    }
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        setValues();
+        emp.add();
+        emp.getAllRows(tblEmp);
+        clearData();
+
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        setValues();
+        emp.update();
+        emp.getAllRows(tblEmp);
+        clearData();
+
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        if (Tools.confirmMsg("Do you want to delete the record ")) {
+            setValues();
+            emp.delete();
+            emp.getAllRows(tblEmp);
+            clearData();
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
+        String EmpNO = (String) Tools.InputBox("Please Enter Employee Number");
+        int ENO = Integer.parseInt(EmpNO);
+        emp.setEmpNO(ENO);
+        emp.getOneRow(tblEmp);
+    }//GEN-LAST:event_btnFindActionPerformed
+
+    private void btnAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAllActionPerformed
+        emp.getAllRows(tblEmp);
+    }//GEN-LAST:event_btnAllActionPerformed
+
+    private void tblEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEmpMouseClicked
+        try {
+            int row = tblEmp.getSelectedRow();
+            txtEmpNO.setText(tblEmp.getValueAt(row, 0).toString());
+            txtEmpName.setText(tblEmp.getValueAt(row, 1).toString());
+            txtAddress.setText(tblEmp.getValueAt(row, 2).toString());
+            txtSalary.setText(tblEmp.getValueAt(row, 3).toString());
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date dateH = sdf.parse(tblEmp.getValueAt(row, 4).toString());
+            Date dateB = sdf.parse(tblEmp.getValueAt(row, 5).toString());
+            txtHiringDate.setDate(dateH);
+            txtBirthDate.setDate(dateB);
+            cbxDept.setSelectedItem(tblEmp.getValueAt(row, 7));
+            btnAdd.setEnabled(false);
+            btnUpdate.setEnabled(true);
+            btnDelete.setEnabled(true);
+            
+        } catch (Exception ex) {
+            Tools.msgBox(ex.getMessage());
+        }
+    }//GEN-LAST:event_tblEmpMouseClicked
+    
+    private String getLike() {
+        return "like'%" + txtSearch.getText() + "%'";
+    }
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        String strSearch = "select * from employee_data where ";
+        if (rdoNumber.isSelected()) {
+            strSearch += " number " + getLike();
+        } else if (rdoName.isSelected()) {
+            strSearch += " name " + getLike();
+        } else if (rdoAddress.isSelected()) {
+            strSearch += " Address " + getLike();
+        } else if (rdoSalary.isSelected()) {
+            strSearch += " Salary " + getLike();
+        } else if (rdoHiring.isSelected()) {
+            strSearch += " Hiring_date " + getLike();
+        } else if (rdoBirth.isSelected()) {
+            strSearch += " Date_of_Birth " + getLike();
+        } else {
+            strSearch += " Department_NO " + getLike() + " or Department " + getLike();
+        }
+        emp.getCustomRows(strSearch, tblEmp);
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments
