@@ -26,8 +26,8 @@ public class Employee_Phones implements mainData {
 
     @Override
     public void add() {
-        String strInsert = "insert into employee_phones values ("
-                + EmpNO + "'"
+        String strInsert = "insert into employee_phones values("
+                + EmpNO + ","
                 + "'" + Phone + "')";
         boolean isAdd = db.go.runNonQuery(strInsert);
         if (isAdd) {
@@ -70,28 +70,30 @@ public class Employee_Phones implements mainData {
 
     @Override
     public void getAllRows(JTable table) {
-        String strSelect ="select phone from Employee_phones"+"where empno="+EmpNO;
+        String strSelect = "select phone from Employee_phones " + "where empno=" + EmpNO;
         db.go.fillToJTable(strSelect, table);
     }
 
     @Override
     public void getOneRow(JTable table) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Tools.msgBox("getOneRow Method in Employee_Phones class not working ");
     }
 
     @Override
     public void getCustomRows(String statement, JTable table) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Tools.msgBox("getCustomRows Method in Employee_Phones class not working ");
     }
 
     @Override
     public String getValueByName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Tools.msgBox("getValueByName Method in Employee_Phones class not working ");
+        return "";
     }
 
     @Override
     public String getNameByValue(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Tools.msgBox("getNameByValue Method in Employee_Phones class not working ");
+        return "";
     }
 
 }
