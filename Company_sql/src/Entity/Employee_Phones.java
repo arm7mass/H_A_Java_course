@@ -96,4 +96,17 @@ public class Employee_Phones implements mainData {
         return "";
     }
 
+    // methode to fine the employee by the phone number 
+    public String getEmpNOByPhone(String requestphone) {
+        String strSelect = "select empno from employee_phones" + " where phone='" + requestphone + "'";
+        Object row[][] = db.go.getTableData(strSelect).Items;
+        String strEmpNO = "";
+        if (row.length > 0) {
+            strEmpNO = (String) row[0][0];
+        } else {
+            strEmpNO = "0";
+        }
+        return strEmpNO;
+    }
+
 }

@@ -7,6 +7,7 @@ package Forms;
 
 import Entity.Department;
 import Entity.Employee;
+import Entity.Employee_Phones;
 import company_sql.Tools;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -76,8 +77,14 @@ public class frmEmployee extends javax.swing.JFrame {
         btnRemovePhones = new controls.JMyButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPhones = new javax.swing.JTable();
+        rdoPhone = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -248,6 +255,8 @@ public class frmEmployee extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblPhones);
 
+        rdoPhone.setText("Phone");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -311,7 +320,14 @@ public class frmEmployee extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(695, 695, 695)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(115, 115, 115)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(45, 45, 45)
@@ -327,14 +343,10 @@ public class frmEmployee extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(rdoBirth)
                                 .addGap(18, 18, 18)
-                                .addComponent(rdoDept))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(115, 115, 115)))))
-                .addContainerGap(158, Short.MAX_VALUE))
+                                .addComponent(rdoDept)
+                                .addGap(18, 18, 18)
+                                .addComponent(rdoPhone)))))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,7 +362,8 @@ public class frmEmployee extends javax.swing.JFrame {
                     .addComponent(rdoSalary)
                     .addComponent(rdoHiring)
                     .addComponent(rdoBirth)
-                    .addComponent(rdoDept))
+                    .addComponent(rdoDept)
+                    .addComponent(rdoPhone))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -429,6 +442,7 @@ public class frmEmployee extends javax.swing.JFrame {
         btnGroup.add(rdoHiring);
         btnGroup.add(rdoBirth);
         btnGroup.add(rdoDept);
+        btnGroup.add(rdoPhone);
         db.go.fillCombo("department", "deptName", cbxDept);
         emp.getAllRows(tblEmp);
         clearData();
@@ -461,6 +475,7 @@ public class frmEmployee extends javax.swing.JFrame {
         btnAdd.setEnabled(true);
         btnDelete.setEnabled(false);
         btnUpdate.setEnabled(false);
+        RemovePhones();
         txtEmpName.requestFocus();
     }
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
@@ -483,9 +498,16 @@ public class frmEmployee extends javax.swing.JFrame {
         emp.setDeptNO(Integer.parseInt(dNO));
 
     }
+    Employee_Phones phones = new Employee_Phones();
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         setValues();
         emp.add();
+        // Add Employee Phone
+        phones.setEmpNO(Integer.parseInt(txtEmpNO.getText()));
+        for (int x = 0; x < tblPhones.getRowCount(); x++) {
+            phones.setPhone(tblPhones.getValueAt(x, 0).toString());
+            phones.add();
+        }
         emp.getAllRows(tblEmp);
         clearData();
 
@@ -494,6 +516,14 @@ public class frmEmployee extends javax.swing.JFrame {
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         setValues();
         emp.update();
+        phones.setEmpNO(Integer.parseInt(txtEmpNO.getText()));
+        // Delte Phones
+        phones.deleteByEmp();
+        // add phones 
+        for (int x = 0; x < tblPhones.getRowCount(); x++) {
+            phones.setPhone(tblPhones.getValueAt(x, 0).toString());
+            phones.add();
+        }
         emp.getAllRows(tblEmp);
         clearData();
 
@@ -503,6 +533,8 @@ public class frmEmployee extends javax.swing.JFrame {
         if (Tools.confirmMsg("Do you want to delete the record ")) {
             setValues();
             emp.delete();
+            phones.setEmpNO((Integer.parseInt(txtEmpNO.getText())));
+            phones.deleteByEmp();
             emp.getAllRows(tblEmp);
             clearData();
         }
@@ -532,6 +564,8 @@ public class frmEmployee extends javax.swing.JFrame {
             txtHiringDate.setDate(dateH);
             txtBirthDate.setDate(dateB);
             cbxDept.setSelectedItem(tblEmp.getValueAt(row, 7));
+            phones.setEmpNO(Integer.parseInt(txtEmpNO.getText()));
+            phones.getAllRows(tblPhones);
             btnAdd.setEnabled(false);
             btnUpdate.setEnabled(true);
             btnDelete.setEnabled(true);
@@ -558,8 +592,11 @@ public class frmEmployee extends javax.swing.JFrame {
             strSearch += " Hiring_date " + getLike();
         } else if (rdoBirth.isSelected()) {
             strSearch += " Date_of_Birth " + getLike();
-        } else {
+        } else if (rdoDept.isSelected()) {
             strSearch += " Department_NO " + getLike() + " or Department " + getLike();
+        } else {
+            String strEmpNum = phones.getEmpNOByPhone(txtSearch.getText());
+            strSearch += " Number like'%" +strEmpNum+ "%'";
         }
         emp.getCustomRows(strSearch, tblEmp);
     }//GEN-LAST:event_btnSearchActionPerformed
@@ -570,11 +607,17 @@ public class frmEmployee extends javax.swing.JFrame {
         txtPhone.setText("");
         txtPhone.requestFocus();
     }//GEN-LAST:event_btnAddPhonesActionPerformed
-
-    private void btnRemovePhonesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemovePhonesActionPerformed
-        DefaultTableModel model = (DefaultTableModel)tblPhones.getModel();
+    private void RemovePhones() {
+        DefaultTableModel model = (DefaultTableModel) tblPhones.getModel();
         model.setNumRows(0);
+    }
+    private void btnRemovePhonesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemovePhonesActionPerformed
+        RemovePhones();
     }//GEN-LAST:event_btnRemovePhonesActionPerformed
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formMouseClicked
 
     /**
      * @param args the command line arguments
@@ -643,6 +686,7 @@ public class frmEmployee extends javax.swing.JFrame {
     private javax.swing.JRadioButton rdoHiring;
     private javax.swing.JRadioButton rdoName;
     private javax.swing.JRadioButton rdoNumber;
+    private javax.swing.JRadioButton rdoPhone;
     private javax.swing.JRadioButton rdoSalary;
     private javax.swing.JTable tblEmp;
     private javax.swing.JTable tblPhones;
