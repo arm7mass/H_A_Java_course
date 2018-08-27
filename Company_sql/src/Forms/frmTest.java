@@ -8,6 +8,7 @@ package Forms;
 import Entity.Department;
 import Entity.Employee;
 import Entity.Employee_Phones;
+import Entity.Project;
 import company_sql.Tools;
 
 /**
@@ -59,6 +60,15 @@ public class frmTest extends javax.swing.JFrame {
         btnEmplyeePhonesDelete = new controls.JMyButton();
         btnEmployeePhonesDeleteByEmpNO = new controls.JMyButton();
         btnEmployeePhonesGetAllRows = new controls.JMyButton();
+        btnProjectAdd = new controls.JMyButton();
+        btnProjectUpateTest = new controls.JMyButton();
+        btnProjectTestDelete = new controls.JMyButton();
+        btmProjectGetAutoNumber = new controls.JMyButton();
+        btnProjectGetAllRows = new controls.JMyButton();
+        btnProjectGetOneRow = new controls.JMyButton();
+        btnProjectTestGetCustomRow = new controls.JMyButton();
+        btnProjectGetValueByName = new controls.JMyButton();
+        btnProjectGetNameByValue = new controls.JMyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,10 +137,10 @@ public class frmTest extends javax.swing.JFrame {
 
         tblTest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null}
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1"
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
         jScrollPane1.setViewportView(tblTest);
@@ -233,11 +243,74 @@ public class frmTest extends javax.swing.JFrame {
             }
         });
 
+        btnProjectAdd.setText("Project Test Add");
+        btnProjectAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProjectAddActionPerformed(evt);
+            }
+        });
+
+        btnProjectUpateTest.setText("Project Test Update ");
+        btnProjectUpateTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProjectUpateTestActionPerformed(evt);
+            }
+        });
+
+        btnProjectTestDelete.setText("Project Test Delete");
+        btnProjectTestDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProjectTestDeleteActionPerformed(evt);
+            }
+        });
+
+        btmProjectGetAutoNumber.setText("Project GetAutoNumber");
+        btmProjectGetAutoNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmProjectGetAutoNumberActionPerformed(evt);
+            }
+        });
+
+        btnProjectGetAllRows.setText("Project Test GetAllRows");
+        btnProjectGetAllRows.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProjectGetAllRowsActionPerformed(evt);
+            }
+        });
+
+        btnProjectGetOneRow.setText("Project Test get One Row ");
+        btnProjectGetOneRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProjectGetOneRowActionPerformed(evt);
+            }
+        });
+
+        btnProjectTestGetCustomRow.setText("Project Test Get Custom Row");
+        btnProjectTestGetCustomRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProjectTestGetCustomRowActionPerformed(evt);
+            }
+        });
+
+        btnProjectGetValueByName.setText("Project Test Get Value By Name");
+        btnProjectGetValueByName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProjectGetValueByNameActionPerformed(evt);
+            }
+        });
+
+        btnProjectGetNameByValue.setText("Project Test Get Name By Value ");
+        btnProjectGetNameByValue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProjectGetNameByValueActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jMyButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -255,18 +328,32 @@ public class frmTest extends javax.swing.JFrame {
                     .addComponent(btnEmplyeePhonesDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEmployeePhonesGetAllRows, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnEmpUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEmpAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGetAllRowsEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEmpDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGetAutoNumberEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGetOneRowEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGetCustomRowEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGetValueByNameEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGetNameByValueEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(138, 138, 138)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnProjectAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEmpUpdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEmpAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetAllRowsEmp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEmpDelete, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetAutoNumberEmp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetOneRowEmp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetCustomRowEmp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetValueByNameEmp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGetNameByValueEmp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProjectUpateTest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProjectTestDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btmProjectGetAutoNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProjectGetAllRows, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnProjectGetOneRow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnProjectTestGetCustomRow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnProjectGetValueByName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnProjectGetNameByValue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -315,14 +402,29 @@ public class frmTest extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnEmpDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(btnEmployeePhonesAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnProjectAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProjectGetOneRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEmployeePhonesAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProjectUpateTest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProjectTestGetCustomRow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnEmplyeePhonesDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEmplyeePhonesDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProjectTestDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProjectGetValueByName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnEmployeePhonesDeleteByEmpNO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEmployeePhonesDeleteByEmpNO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btmProjectGetAutoNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProjectGetNameByValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnEmployeePhonesGetAllRows, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEmployeePhonesGetAllRows, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProjectGetAllRows, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51))
         );
 
@@ -465,9 +567,58 @@ public class frmTest extends javax.swing.JFrame {
 
     private void btnEmployeePhonesGetAllRowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeePhonesGetAllRowsActionPerformed
         Employee_Phones phone = new Employee_Phones();
-         phone.setEmpNO(2);
+        phone.setEmpNO(2);
         phone.getAllRows(tblTest);
     }//GEN-LAST:event_btnEmployeePhonesGetAllRowsActionPerformed
+    Project proj = new Project();
+    private void btnProjectAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProjectAddActionPerformed
+        proj.setProjectNO(3);
+        proj.setProjectName("Sub2 project");
+        proj.setLocation("Doha3");
+        proj.setDeptNO(3);
+        proj.add();
+        
+    }//GEN-LAST:event_btnProjectAddActionPerformed
+
+    private void btnProjectUpateTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProjectUpateTestActionPerformed
+        proj.setProjectNO(2);
+        proj.setProjectName("Sub1 Project");
+        proj.setLocation("Doha2A");
+        proj.setDeptNO(2);
+        proj.update();
+    }//GEN-LAST:event_btnProjectUpateTestActionPerformed
+
+    private void btnProjectTestDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProjectTestDeleteActionPerformed
+        proj.setProjectNO(3);
+        proj.delete();
+    }//GEN-LAST:event_btnProjectTestDeleteActionPerformed
+
+    private void btmProjectGetAutoNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmProjectGetAutoNumberActionPerformed
+        Tools.msgBox(proj.getAutoNumber());
+    }//GEN-LAST:event_btmProjectGetAutoNumberActionPerformed
+
+    private void btnProjectGetAllRowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProjectGetAllRowsActionPerformed
+        
+        proj.getAllRows(tblTest);
+    }//GEN-LAST:event_btnProjectGetAllRowsActionPerformed
+
+    private void btnProjectGetOneRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProjectGetOneRowActionPerformed
+        proj.setProjectNO(1);
+        proj.getOneRow(tblTest);
+    }//GEN-LAST:event_btnProjectGetOneRowActionPerformed
+
+    private void btnProjectTestGetCustomRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProjectTestGetCustomRowActionPerformed
+        String strTest= "select * from project ";
+        proj.getCustomRows(strTest, tblTest);
+    }//GEN-LAST:event_btnProjectTestGetCustomRowActionPerformed
+
+    private void btnProjectGetValueByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProjectGetValueByNameActionPerformed
+        Tools.msgBox(proj.getValueByName("Sub1 Project"));
+    }//GEN-LAST:event_btnProjectGetValueByNameActionPerformed
+
+    private void btnProjectGetNameByValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProjectGetNameByValueActionPerformed
+        Tools.msgBox(proj.getNameByValue("1"));
+    }//GEN-LAST:event_btnProjectGetNameByValueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -505,6 +656,7 @@ public class frmTest extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private controls.JMyButton btmProjectGetAutoNumber;
     private controls.JMyButton btnAdd;
     private controls.JMyButton btnDelete;
     private controls.JMyButton btnEmpAdd;
@@ -526,6 +678,14 @@ public class frmTest extends javax.swing.JFrame {
     private controls.JMyButton btnGetOneRowEmp;
     private controls.JMyButton btnGetValueByName;
     private controls.JMyButton btnGetValueByNameEmp;
+    private controls.JMyButton btnProjectAdd;
+    private controls.JMyButton btnProjectGetAllRows;
+    private controls.JMyButton btnProjectGetNameByValue;
+    private controls.JMyButton btnProjectGetOneRow;
+    private controls.JMyButton btnProjectGetValueByName;
+    private controls.JMyButton btnProjectTestDelete;
+    private controls.JMyButton btnProjectTestGetCustomRow;
+    private controls.JMyButton btnProjectUpateTest;
     private controls.JMyButton btnUpdate;
     private controls.JMyButton jMyButton1;
     private javax.swing.JScrollPane jScrollPane1;

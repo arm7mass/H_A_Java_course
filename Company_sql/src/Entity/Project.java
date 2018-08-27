@@ -3,7 +3,7 @@ package Entity;
 import company_sql.Tools;
 import javax.swing.JTable;
 
-public class Porject implements mainData {
+public class Project implements mainData {
 
     private int ProjectNO;
     private String ProjectName;
@@ -44,7 +44,7 @@ public class Porject implements mainData {
 
     @Override
     public void add() {
-        String strInsert = "inert into project values ("
+        String strInsert = "insert into project values ("
                 + ProjectNO + ","
                 + "'" + ProjectName + "',"
                 + "'" + Location + "',"
@@ -57,11 +57,11 @@ public class Porject implements mainData {
 
     @Override
     public void update() {
-        String strUpdate = "update project set"
-                + "ProjectName=," + ProjectName + "',"
-                + "Location ='" + Location + "',"
+        String strUpdate = "update Project set "
+                + "ProjectName='" + ProjectName + "',"
+                + "Location='" + Location + "',"
                 + "DeptNO=" + DeptNO
-                + "where ProjectNO=" + ProjectNO;
+                + " where ProjectNO=" + ProjectNO;
         boolean isUpdate = db.go.runNonQuery(strUpdate);
         if (isUpdate) {
             Tools.msgBox("Project Is Updated ");
@@ -91,7 +91,7 @@ public class Porject implements mainData {
 
     @Override
     public void getOneRow(JTable table) {
-        String strSelect = "select * from project_data"
+        String strSelect = "select * from project_data "
                 + "where Project_NO=" + ProjectNO;
         db.go.fillToJTable(strSelect, table);
     }
@@ -103,12 +103,18 @@ public class Porject implements mainData {
 
     @Override
     public String getValueByName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String strSelect = "select projectNO from project "
+                + " where ProjectName ='" + name + "'";
+        String strVal = (String) db.go.getTableData(strSelect).Items[0][0];
+        return strVal;
     }
 
     @Override
     public String getNameByValue(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String strSelect = "select ProjectName from project "
+                + "where ProjectNO=" + value;
+        String strName = (String) db.go.getTableData(strSelect).Items[0][0];
+        return strName;
     }
 
 }
