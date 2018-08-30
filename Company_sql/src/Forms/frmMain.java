@@ -33,6 +33,7 @@ public class frmMain extends javax.swing.JFrame {
         btnExit = new controls.JMyButton();
         btnDept = new controls.JMyButton();
         btnEmp = new controls.JMyButton();
+        btnProj = new controls.JMyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +61,13 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
+        btnProj.setText("Project Form");
+        btnProj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProjActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,7 +84,8 @@ public class frmMain extends javax.swing.JFrame {
                         .addGap(366, 366, 366)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnDept, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnProj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(360, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -88,7 +97,9 @@ public class frmMain extends javax.swing.JFrame {
                 .addComponent(btnDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(btnProj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
         );
@@ -109,6 +120,11 @@ public class frmMain extends javax.swing.JFrame {
         this.dispose();
         Tools.openForm(new frmEmployee());
     }//GEN-LAST:event_btnEmpActionPerformed
+
+    private void btnProjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProjActionPerformed
+        this.dispose();
+        Tools.openForm(new frmProject());
+    }//GEN-LAST:event_btnProjActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +165,7 @@ public class frmMain extends javax.swing.JFrame {
     private controls.JMyButton btnDept;
     private controls.JMyButton btnEmp;
     private controls.JMyButton btnExit;
+    private controls.JMyButton btnProj;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
