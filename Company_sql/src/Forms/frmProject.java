@@ -89,10 +89,10 @@ public class frmProject extends javax.swing.JFrame {
 
         tblProject.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {}
+                {null, null, null, null, null}
             },
             new String [] {
-
+                "Number", "Name", "Location", "NO", "Department"
             }
         ));
         jScrollPane1.setViewportView(tblProject);
@@ -298,6 +298,7 @@ public class frmProject extends javax.swing.JFrame {
         btnGroup.add(rdoLocation);
         btnGroup.add(rdoDepartment);
         db.go.fillCombo("Department", "DeptName", cbxDept);
+        proj.getAllRows(tblProject);
         ClearData();
     }//GEN-LAST:event_formWindowOpened
     Department dept = new Department();
@@ -342,19 +343,23 @@ public class frmProject extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         setValue();
         proj.add();
+        proj.getAllRows(tblProject);
         ClearData();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         setValue();
         proj.update();
+        proj.getAllRows(tblProject);
         ClearData();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        setValue();
-        proj.delete();
-        ClearData();
+        if (Tools.confirmMsg("Do you want to delete ?")) {
+            proj.delete();
+            proj.getAllRows(tblProject);
+            ClearData();
+        }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
