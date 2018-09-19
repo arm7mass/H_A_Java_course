@@ -39,6 +39,7 @@
                           <Component id="btnDept" max="32767" attributes="0"/>
                           <Component id="btnEmp" max="32767" attributes="0"/>
                           <Component id="btnProj" max="32767" attributes="0"/>
+                          <Component id="btnWorkON" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -57,7 +58,9 @@
               <Component id="btnEmp" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnProj" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="158" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnWorkON" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="115" max="32767" attributes="0"/>
               <Component id="btnExit" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
           </Group>
@@ -103,6 +106,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProjActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnWorkON">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Work On Form"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnWorkONActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

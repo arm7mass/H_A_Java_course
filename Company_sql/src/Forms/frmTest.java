@@ -144,10 +144,10 @@ public class frmTest extends javax.swing.JFrame {
 
         tblTest.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null}
+                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
         jScrollPane1.setViewportView(tblTest);
@@ -335,8 +335,18 @@ public class frmTest extends javax.swing.JFrame {
         });
 
         btnTestWorkONgetOneRow.setText("Test WorkON getOne Row");
+        btnTestWorkONgetOneRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTestWorkONgetOneRowActionPerformed(evt);
+            }
+        });
 
         btnTestworkONgetCustomRows.setText("Test workON getCustomRows");
+        btnTestworkONgetCustomRows.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTestworkONgetCustomRowsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -675,7 +685,7 @@ public class frmTest extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTestWorkONAddActionPerformed
 
     private void btnTestWorkONgetAllRowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestWorkONgetAllRowsActionPerformed
-        // TODO add your handling code here:
+        work.getAllRows(tblTest);
     }//GEN-LAST:event_btnTestWorkONgetAllRowsActionPerformed
 
     private void btntestWorkONDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntestWorkONDeleteActionPerformed
@@ -683,6 +693,16 @@ public class frmTest extends javax.swing.JFrame {
         work.setProjectNO(3);
         work.delete();
     }//GEN-LAST:event_btntestWorkONDeleteActionPerformed
+
+    private void btnTestWorkONgetOneRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestWorkONgetOneRowActionPerformed
+        work.setEmpNO(1);
+        work.setProjectNO(1);
+        work.getOneRow(tblTest);
+    }//GEN-LAST:event_btnTestWorkONgetOneRowActionPerformed
+
+    private void btnTestworkONgetCustomRowsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTestworkONgetCustomRowsActionPerformed
+        work.getCustomRows("select * from workon_data", tblTest);
+    }//GEN-LAST:event_btnTestworkONgetCustomRowsActionPerformed
 
     /**
      * @param args the command line arguments
