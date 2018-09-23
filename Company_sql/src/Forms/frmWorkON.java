@@ -5,6 +5,7 @@
  */
 package Forms;
 
+import Entity.*;
 import company_sql.Tools;
 
 /**
@@ -29,6 +30,7 @@ public class frmWorkON extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGroup = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -50,6 +52,11 @@ public class frmWorkON extends javax.swing.JFrame {
         btnBack = new controls.JMyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("WorkON Form");
@@ -63,6 +70,7 @@ public class frmWorkON extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setText("Search By:");
 
+        rdoEmpNO.setSelected(true);
         rdoEmpNO.setText("EmployeeNO");
 
         rdoEmpName.setText("EmployeeName");
@@ -87,8 +95,18 @@ public class frmWorkON extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblWorkON);
 
         btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnFind.setText("Find");
 
@@ -201,6 +219,40 @@ public class frmWorkON extends javax.swing.JFrame {
         Tools.openForm(new frmMain());
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        btnGroup.add(rdoEmpNO);
+        btnGroup.add(rdoEmpName);
+        btnGroup.add(rdoProjectNO);
+        btnGroup.add(rdoProjectName);
+        db.go.fillCombo("Employee", "EmpName", cbxEmp);
+        db.go.fillCombo("Project", "projectname", cbxProject);
+    }//GEN-LAST:event_formWindowOpened
+    Employee emp = new Employee();
+    Project proj = new Project();
+    WorkOn work = new WorkOn();
+
+    private void setValues() {
+        String EmpName = cbxEmp.getSelectedItem().toString();
+        String ProjName = cbxProject.getSelectedItem().toString();
+        String strEmpNO = emp.getValueByName(EmpName);
+        String strProjNO = emp.getValueByName(ProjName);
+        int EmpNO = Integer.parseInt(strEmpNO);
+        int ProjNO = Integer.parseInt(strProjNO);
+        work.setEmpNO(EmpNO);
+        work.setProjectNO(ProjNO);
+    }
+
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        setValues();
+        work.add();
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        setValues();
+        work.delete();
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -242,6 +294,7 @@ public class frmWorkON extends javax.swing.JFrame {
     private controls.JMyButton btnBack;
     private controls.JMyButton btnDelete;
     private controls.JMyButton btnFind;
+    private javax.swing.ButtonGroup btnGroup;
     private controls.JMyButton btnSearch;
     private controls.JMyCombo cbxEmp;
     private controls.JMyCombo cbxProject;
