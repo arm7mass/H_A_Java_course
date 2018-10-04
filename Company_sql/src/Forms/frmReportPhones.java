@@ -6,23 +6,17 @@
 package Forms;
 
 import company_sql.Tools;
-import java.awt.Color;
-import java.awt.print.PrinterException;
-import java.text.MessageFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JTable;
 
 /**
  *
  * @author ARM-PC
  */
-public class frmReportDept extends javax.swing.JFrame {
+public class frmReportPhones extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmReportDept
+     * Creates new form frmReportPhones
      */
-    public frmReportDept() {
+    public frmReportPhones() {
         initComponents();
     }
 
@@ -37,7 +31,7 @@ public class frmReportDept extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDept = new javax.swing.JTable();
+        tblPhones = new javax.swing.JTable();
         btnPrint = new controls.JMyButton();
         btnBack = new controls.JMyButton();
 
@@ -49,14 +43,14 @@ public class frmReportDept extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel1.setText("Department Report");
+        jLabel1.setText("Phones Report");
 
-        tblDept.setModel(new javax.swing.table.DefaultTableModel(
+        tblPhones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Number", "Name", "Location"
+                "Employee NO", "Employee Name", "Location"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -67,12 +61,7 @@ public class frmReportDept extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblDept.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblDeptMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tblDept);
+        jScrollPane1.setViewportView(tblPhones);
 
         btnPrint.setText("Print");
         btnPrint.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +86,7 @@ public class frmReportDept extends javax.swing.JFrame {
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(281, Short.MAX_VALUE)
+                .addContainerGap(226, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,27 +109,11 @@ public class frmReportDept extends javax.swing.JFrame {
                 .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tblDeptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDeptMouseClicked
-
-    }//GEN-LAST:event_tblDeptMouseClicked
-
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        this.dispose();
-        Tools.openForm(new frmReports());
-    }//GEN-LAST:event_btnBackActionPerformed
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        db.go.fillToJTable("Department_data", tblDept);
-        //tblDept.getTableHeader().setBackground(new Color(0, 0, 100));
-        //tblDept.getTableHeader().setForeground(Color.white);
-        Tools.setReport(tblDept);
-    }//GEN-LAST:event_formWindowOpened
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
         /*try {
@@ -152,9 +125,18 @@ public class frmReportDept extends javax.swing.JFrame {
         } catch (Exception ex) {
             Tools.msgBox(ex.getMessage());
         }*/
-        Tools.PrintReport(tblDept, "Department");
-
+        Tools.PrintReport(tblPhones, "Employee Phones");
     }//GEN-LAST:event_btnPrintActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.dispose();
+        Tools.openForm(new frmReports());
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        db.go.fillToJTable("Employee_phones_data", tblPhones);
+        Tools.setReport(tblPhones);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -173,20 +155,20 @@ public class frmReportDept extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmReportDept.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmReportPhones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmReportDept.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmReportPhones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmReportDept.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmReportPhones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmReportDept.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmReportPhones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmReportDept().setVisible(true);
+                new frmReportPhones().setVisible(true);
             }
         });
     }
@@ -196,6 +178,6 @@ public class frmReportDept extends javax.swing.JFrame {
     private controls.JMyButton btnPrint;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblDept;
+    private javax.swing.JTable tblPhones;
     // End of variables declaration//GEN-END:variables
 }

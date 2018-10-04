@@ -1,6 +1,7 @@
 package company_sql;
 
 import java.awt.AWTException;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.HeadlessException;
@@ -13,11 +14,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 public class Tools {
@@ -26,13 +29,14 @@ public class Tools {
     public static void msgBox(String Message) {
         JOptionPane.showMessageDialog(null, Message);
     }
+
     // Static class confirm Method 
-    public static Boolean confirmMsg(String message){
+    public static Boolean confirmMsg(String message) {
         int msgC = JOptionPane.showConfirmDialog(null, message);
-        if (msgC==JOptionPane.YES_OPTION){ // the user press on yes button 
-            return true ;
-        }else{
-            return false ;
+        if (msgC == JOptionPane.YES_OPTION) { // the user press on yes button 
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -40,19 +44,19 @@ public class Tools {
     public static void createFolder(String Foldername, String path) {
         File f = new File(path + "/" + Foldername);
         f.mkdir();
-
+        
     }
 
     //Static Class Create Folder Method
     public static void createFolder(String Foldername) {
         File f = new File(Foldername);
         f.mkdir();
-
+        
     }
 
     // Static Class Open New Form Method
     public static void openForm(JFrame form) {
-
+        
         try {
             form.setLocationRelativeTo(null);
             Image img = ImageIO.read(Tools.class.getResource("image.jpg"));
@@ -62,7 +66,7 @@ public class Tools {
         } catch (IOException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
 
     //Static Java Clear J Text Field Method
@@ -75,12 +79,12 @@ public class Tools {
                 ClearText((Container) c);
             }
         }
-
+        
     }
 
     //Static Create Empty File Method
     public static void CreateEmptyFile(String FileName) {
-
+        
         File f = new File(FileName + ".txt");
         try {
             f.createNewFile();
@@ -102,7 +106,7 @@ public class Tools {
             PrintWriter p = new PrintWriter(FileName + ".txt");
             for (Object obj : MyData) {
                 p.println(obj);
-
+                
             }
             p.close();
         } catch (FileNotFoundException ex) {
@@ -166,7 +170,7 @@ public class Tools {
         } catch (AWTException | HeadlessException | IOException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
 
     // static print screen method and save to file with minimize the form 
@@ -182,7 +186,7 @@ public class Tools {
         }
         form.setState(0);//maximize the form 
     }
-
+    
     public class Table {
 
         //Attributes 
@@ -237,11 +241,29 @@ public class Tools {
         public Object getValue(int RowIndex, int columnIndex) {
             return Items[RowIndex][columnIndex];
         }
-
+        
         public Object[] getRow(int RowIndex) {
             return Items[RowIndex];
         }
-
+        
     }
 
+    // method to colorize the table
+    public static void setReport(JTable table) {
+        table.getTableHeader().setBackground(new Color(0, 0, 100));
+        table.getTableHeader().setForeground(Color.white);
+    }
+
+    // method to print the report 
+    public static void PrintReport(JTable table, String title) {
+        try {
+            MessageFormat header = new MessageFormat(title + "Report");
+            MessageFormat footer = new MessageFormat("page-{0}");
+            table.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+        } catch (Exception ex) {
+            Tools.msgBox(ex.getMessage());
+        }
+        
+    }
+    
 }
