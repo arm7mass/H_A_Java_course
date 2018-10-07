@@ -34,6 +34,7 @@
                   <Component id="btnDeptReport" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="118" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="btnProjectReport" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnPhonesReport" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnEmpReport" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -53,7 +54,9 @@
               <Component id="btnEmpReport" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnPhonesReport" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="224" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnProjectReport" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="181" max="32767" attributes="0"/>
               <Component id="btnBack" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
           </Group>
@@ -99,6 +102,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPhonesReportActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="controls.JMyButton" name="btnProjectReport">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Project Report"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProjectReportActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
