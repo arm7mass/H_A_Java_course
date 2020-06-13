@@ -1,1 +1,1 @@
-# Hasouna Academy Java Course 
+# Java Practice
